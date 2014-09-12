@@ -204,8 +204,8 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
     background: none;
 }
 #pma_navigation_tree li > a, #pma_navigation_tree li > i {
-    line-height: 1.5em;
-    height: 1.5em;
+    line-height: 1.8em;
+    height: 1.8em;
     padding-<?php echo $left; ?>: 0.3em;
 }
 #pma_navigation_tree .list_container {
@@ -259,27 +259,26 @@ li.fast_filter.db_fast_filter {
 #pma_navigation_resizer {
     width: 3px;
     height: 100%;
-    background-color: #111;
+    background-color: rgba(0,0,0,0.1);
     cursor: col-resize;
     position: fixed;
     top: 0;
-    <?php echo $left; ?>: 240px;
+    <?php echo $left; ?>: 237px;
     z-index: 801;
 }
 #pma_navigation_collapser {
     width: 20px;
     height: 22px;
     line-height: 22px;
-    background: #eee;
-    color: #555;
+    background: none;
+    color: #d64937;
     font-weight: bold;
     position: fixed;
     top: 0;
+    padding-left:6px;
     <?php echo $left; ?>: <?php echo $GLOBALS['cfg']['NaviWidth']; ?>px;
     text-align: center;
     cursor: pointer;
     z-index: 800;
-    text-shadow: 0px 1px 0px #fff;
-    filter: dropshadow(color=#fff, offx=0, offy=1);
-    border: 1px solid #888;
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.5);        
 }

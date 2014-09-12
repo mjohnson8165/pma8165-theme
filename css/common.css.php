@@ -64,10 +64,10 @@ h1 {
 h2 {
     font-size: 2em;
     font-weight: normal;
-    text-shadow: 0 1px 0 #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
     padding: 10px 0 10px;
     padding-<?php echo $left; ?>: 3px;
-    color: #c00;
+    color: #ccc;
 }
 
 /* Hiding icons in the page titles */
@@ -89,7 +89,9 @@ h2 a img {
 }
 
 #table_results td.data {
-border-right: 1px solid #bbb;
+border-right: 1px solid #222;
+padding: 0.5em;
+line-height: 1em;
 }
 
 h3 {
@@ -146,8 +148,16 @@ dfn:hover {
 th {
     font-weight: bold;
     color: <?php echo $GLOBALS['cfg']['ThColor']; ?>;
-    background: #f3f3f3;
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('ffffff', 'cccccc'); ?>
+    background: #191919;
+    <?php echo $_SESSION['PMA_Theme']->getCssGradient('222', '191919'); ?>
+}
+
+th span {
+    text-align: center;
+}
+
+th a {
+    color: <?php echo $GLOBALS['cfg']['ThColor']; ?> !important;
 }
 
 a img {
@@ -175,13 +185,13 @@ input[type=date] {
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
 
-    box-shadow: 0 1px 2px #ddd;
-    -moz-box-shadow: 0 1px 2px #ddd;
-    -webkit-box-shadow: 0 1px 2px #ddd;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
 
-    background: white;
-    border: 1px solid #aaa;
-    color: #555;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #ccc;
     padding: 4px;
     margin: 6px;
 
@@ -189,7 +199,7 @@ input[type=date] {
 
 input[type=submit],
 button[type=submit]:not(.mult_submit) {
-    font-weight: bold !important;
+    font-weight: normal !important;
 }
 
 input[type=submit],
@@ -198,19 +208,19 @@ input[type=reset],
 input[name=submit_reset],
 input.button {
     margin-left: 14px;
-    border: 1px solid #aaa;
+    border: 1px solid #ff533d;
     padding: 3px 7px;
-    color: #111;
+    color: #fff;
     text-decoration: none;
-    background: #ddd;
+    background: #d64937;
 
-    border-radius: 12px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
 
-    text-shadow: 0 1px 0 #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
 
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('ffffff', 'cccccc'); ?>
+    <?php echo $_SESSION['PMA_Theme']->getCssGradient('d64937', 'ff533d'); ?>
 }
 
 input[type=submit]:hover,
@@ -219,7 +229,8 @@ input[type=reset]:hover,
 input[name=submit_reset]:hover,
 input.button:hover {
     position: relative;
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('cccccc', 'dddddd'); ?>
+    border: 1px solid #444;
+    <?php echo $_SESSION['PMA_Theme']->getCssGradient('333', '444'); ?>
     cursor: pointer;
 }
 
@@ -247,13 +258,13 @@ fieldset {
     border-radius: 4px 4px 0 0;
     -moz-border-radius: 4px 4px 0 0;
     -webkit-border-radius: 4px 4px 0 0;
-    border: #aaa solid 1px;
+    border: 1px solid rgba(255,255,255,0.1);
     padding: 1.5em;
-    background: #eee;
-    text-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #fff inset;
-    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #fff inset;
-    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #fff inset;
-    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #fff inset;
+    background: none;
+    text-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
+    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
+    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
+    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
 }
 
 fieldset fieldset {
@@ -266,17 +277,17 @@ fieldset fieldset {
 
 fieldset legend {
     font-weight: bold;
-    color: #444;
+    color: #ccc;
     padding: 5px 10px;
     border-radius: 2px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
-    border: 1px solid #aaa;
-    background-color: #fff;
-    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>3px 3px 15px #bbb;
-    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>3px 3px 15px #bbb;
-    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>3px 3px 15px #bbb;
-    max-width: 100%;
+    border: 1px solid rgba(255,255,255,0.1);
+    background-color: #222;
+    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>3px 3px 15px rgba(0,0,0,0.3);
+    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>3px 3px 15px rgba(0,0,0,0.3);
+    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>3px 3px 15px rgba(0,0,0,0.3);
+    max-width: 100%;    
 }
 
 .some-margin {
@@ -292,10 +303,10 @@ button {
 table caption,
 table th,
 table td {
-    padding: .3em;
+    padding: 0.5em .5em;
     margin: .1em;
     vertical-align: top;
-    text-shadow: 0 1px 0 #fff;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
 }
 
 /* 3.4 */
@@ -304,7 +315,7 @@ table {
 }
 
 th {
-    border-right: 1px solid #fff;
+    border-right: 1px solid #333;
     text-align: left;
 }
 
@@ -325,18 +336,18 @@ select {
     -webkit-border-radius: 3px;
     border-radius: 3px;
 
-    -moz-box-shadow: 0 1px 2px #ddd;
-    -webkit-box-shadow: 0 1px 2px #ddd;
-    box-shadow: 0 1px 2px #ddd;
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 
-    border: 1px solid #333;
+    border: 1px solid rgba(255,255,255,0.1);
     color: #ccc;
     padding: 3px;
-    background: #111;
+    background: rgba(0,0,0,0.2);
 }
 
 select[multiple] {
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('ffffff', 'f2f2f2'); ?>
+    <?php echo $_SESSION['PMA_Theme']->getCssGradient('rgba(0,0,0,0.2)', 'rgba(0,0,0,0.1)'); ?>
 }
 
 /******************************************************************************/
@@ -405,7 +416,7 @@ div.tools {
 }
 
 div.tools a {
-    color: #3a7ead !important;
+    color: #d64937 !important;
 }
 
 div.tools,
@@ -449,7 +460,7 @@ button.mult_submit {
 /* odd items 1,3,5,7,... */
 table tr.odd th,
 .odd {
-    background: #fff;
+    background: #131313;
     <?php echo $_SESSION['PMA_Theme']->getCssIEClearFilter(); ?>
 }
 
@@ -457,7 +468,7 @@ table tr.odd th,
 /* (tested on CRTs and ACLs) */
 table tr.even th,
 .even {
-    background: #DFDFDF;
+    background: #0c0c0c;
     <?php echo $_SESSION['PMA_Theme']->getCssIEClearFilter(); ?>
 }
 
@@ -475,9 +486,10 @@ td.marked,
 table tr.marked td,
 table tr.marked th,
 table tr.marked {
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('ced6df', 'b6c6d7'); ?>
+    <?php echo $_SESSION['PMA_Theme']->getCssGradient('ff533d', 'd64937'); ?>
     color: <?php echo $GLOBALS['cfg']['BrowseMarkerColor']; ?>;
 }
+table tr.marked a {color: <?php echo $GLOBALS['cfg']['BrowseMarkerColor']; ?>; }
 <?php } ?>
 
 <?php if ($GLOBALS['cfg']['BrowsePointerEnable']) { ?>
@@ -485,8 +497,8 @@ table tr.marked {
 .odd:hover,
 .even:hover,
 .hover {
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('ced6df', 'b6c6d7'); ?>
-    color: <?php echo $GLOBALS['cfg']['BrowsePointerColor']; ?>;
+    <?php echo $_SESSION['PMA_Theme']->getCssGradient('eee', 'e5e5e5'); ?>
+    color: <?php echo $GLOBALS['cfg']['BrowsePointerColor']; ?>;    
 }
 
 /* hovered table rows */
@@ -494,7 +506,7 @@ table tr.odd:hover th,
 table tr.even:hover th,
 table tr.hover th {
     <?php echo $_SESSION['PMA_Theme']->getCssGradient('ced6df', 'b6c6d7'); ?>
-    color: <?php echo $GLOBALS['cfg']['BrowsePointerColor']; ?>;
+    color: <?php echo $GLOBALS['cfg']['BrowsePointerColor']; ?>;    
 }
 <?php } ?>
 
@@ -592,7 +604,7 @@ img.lightbulb {
 /* Doc links in SQL */
 .cm-sql-doc {
     text-decoration: none;
-    border-bottom: 1px dotted #000;
+    border-bottom: 1px dotted;
     color: inherit !important;
 }
 
@@ -638,38 +650,33 @@ div.error {
     -webkit-border-radius: 5px;
     border-radius: 5px;
 
-    -moz-box-shadow: 0 1px 1px #000 inset;
-    -webkit-box-shadow: 0 1px 1px #000 inset;
-    box-shadow: 0 1px 1px #000 inset;
-}
-
-.success a,
-.notice a,
-.error a {
-    text-decoration: underline;
+    -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.2) inset;
+    -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.2) inset;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2) inset;
 }
 
 .success {
-    color: #000;
-    background-color: #ebf8a4;
+    color: #fff;
+    background-color: #1c2e1d;
 }
 
 h1.success,
 div.success {
-    border-color: #a2d246;
+    border-color: rgba(255,255,255,0.05);
 }
 .success h1 {
     border-color: #00FF00;
 }
 
 .notice {
-    color: #ddd;
-    background-color: #222;
+    color: #999;
+    background-color: transparent;
 }
 
 h1.notice,
 div.notice {
-    border-color: #111;
+    border-color: rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .notice h1 {
@@ -846,13 +853,13 @@ ul#topmenu2 li {
 }
 
 .menucontainer {
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('ffffff', 'dcdcdc'); ?>
-    border-top: 1px solid #aaa;
+    <?php echo $_SESSION['PMA_Theme']->getCssGradient('222', '1a1a1a'); ?>
+    border-top: 1px solid #111;
 }
 
 /* default tab styles */
 .tabactive {
-    background: #fff !important;
+    background: #d64937 !important;
 }
 
 ul#topmenu2 a {
@@ -869,12 +876,17 @@ ul#topmenu2 a {
 
 }
 
-fieldset.caution a {
-    color: #FF0000;
+fieldset.caution a:first-child {
+    color: #d64937;
+    background: none;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 4px 8px;
 }
 fieldset.caution a:hover {
     color: #fff;
-    background-color: #FF0000;
+    background: #d64937;
 }
 
 #topmenu {
@@ -893,21 +905,25 @@ ul#topmenu ul.only {
 }
 
 ul#topmenu > li {
-    border-right: 1px solid #fff;
-    border-left: 1px solid #ccc;
+    border-right: 1px solid #333;
+    -moz-box-shadow: inset -1px 0 0 rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset -1px 0 0 rgba(0,0,0,0.5);
+    box-shadow: inset -1px 0 0 rgba(0,0,0,0.5);
 }
 
 /* default tab styles */
 ul#topmenu a,
 ul#topmenu span {
     padding: .6em;
+    color: #ccc;
+    text-shadow: 1px 1px 1px #0c0c0c;
 }
 
 ul#topmenu ul a {
     border-width: 1pt 0 0 0;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
-    border-radius: 0;
+    border-radius: 0;    
 }
 
 ul#topmenu ul li:first-child a {
@@ -918,6 +934,8 @@ ul#topmenu ul li:first-child a {
 ul#topmenu > li > a:hover,
 ul#topmenu > li > .tabactive {
     text-decoration: none;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
 
 ul#topmenu ul a:hover,
@@ -927,7 +945,7 @@ ul#topmenu ul .tabactive {
 
 ul#topmenu a.tab:hover,
 ul#topmenu .tabactive {
-    /* background-color: <?php echo $GLOBALS['cfg']['MainBackground']; ?>;  */
+    background-color: <?php echo $GLOBALS['cfg']['MainBackground']; ?>;
 }
 
 ul#topmenu2 a.tab:hover,
@@ -1016,8 +1034,8 @@ div#tablestatistics table {
 }
 
 #serverinfo {
-    border-bottom: 1px solid #fff;
-    background: #888;
+    border-bottom: 1px solid #191919;
+    background: #1a1a1a;
     padding: .3em .9em;
     padding-<?php echo $left; ?>: 2.2em;
     text-shadow: 0 1px 0 #000;
@@ -1027,7 +1045,7 @@ div#tablestatistics table {
 
 #serverinfo .item {
     white-space: nowrap;
-    color: #fff;
+    color: #999;
 }
 
 #goto_pagetop {
@@ -1376,7 +1394,7 @@ div#queryAnalyzerDialog table.queryNums {
 
 p.notice {
     margin: 1.5em 0;
-    border: 1px solid #000;
+    border: 1px solid #151515;
     background-repeat: no-repeat;
         <?php if ($GLOBALS['text_dir'] === 'ltr') { ?>
     background-position: 10px 50%;
@@ -1385,13 +1403,13 @@ p.notice {
     background-position: 99% 50%;
     padding: 25px 10px 10px 10px
         <?php } ?>
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    -moz-box-shadow: 0 1px 2px #fff inset;
-    -webkit-box-shadow: 0 1px 2px #fff inset;
-    box-shadow: 0 1px 2px #fff inset;
-    background: #555;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 0 1px 1px rgba(255,255,255,0.1) inset;
+    -webkit-box-shadow: 0 1px 1px rgba(255,255,255,0.1) inset;
+    box-shadow: 0 1px 1px rgba(255,255,255,0.1) inset;
+    background: #252525;
     color: #d4fb6a;
 }
 
@@ -1623,12 +1641,16 @@ li.no_bullets {
 
 #selflink {
     clear: both;
-    display: block;
+    display: none;
     margin-top: 1em;
     margin-bottom: 1em;
+    padding-top: 1em;
     width: 98%;
     margin-<?php echo $left; ?>: 1%;
-    border-top: .1em solid silver;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.3) inset;
+    -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.3) inset;
     text-align: <?php echo $right; ?>;
 }
 
@@ -1722,24 +1744,25 @@ div.sqlvalidate {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
-    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>2px 2px 5px #000;
-    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>2px 2px 5px #000;
-    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>2px 2px 5px #000;
+    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>2px 2px 10px rgba(0,0,0,0.3);
+    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>2px 2px 10px rgba(0,0,0,0.3);
+    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>2px 2px 10px rgba(0,0,0,0.3);
     margin-bottom: 1em;
     padding-bottom: 1em;
 }
 
 .group h2 {
-    background-color: #2a2a2a;
-    padding: .3em .3em;
+    background-color: #252525;
+    padding: .5em .5em;
     margin-top: 0;
-    color: #fff;
-    font-size: 1.4em;
+    color: #999;
+    font-size: 1.2em;
     font-weight: normal;
     text-shadow: 0 1px 1px #000;
-    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 15px #222 inset;
-    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 15px #222 inset;
-    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 15px #222 inset;
+    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 50px #191919 inset;
+    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 50px #191919 inset;
+    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 50px #191919 inset;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
 }
 
 .group-cnt {
@@ -1916,23 +1939,24 @@ input[type=date].invalid_value,
 .importoptions #buttonGo {
     font-weight: bold;
     margin-<?php echo $left; ?>: 14px;
-    border: 1px solid #aaa;
+    border: 1px solid #ff533d;
     padding: 5px 12px;
-    color: #111;
+    color: #fff;
     text-decoration: none;
     background: #ddd;
 
-    border-radius: 12px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
 
-    text-shadow: 0 1px 0 #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
 
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('ffffff', 'cccccc'); ?>
+    <?php echo $_SESSION['PMA_Theme']->getCssGradient('d64937', 'ff533d'); ?>
     cursor: pointer;
 }
 #buttonGo:hover {
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('cccccc', 'dddddd'); ?>
+    border: 1px solid #444;
+    <?php echo $_SESSION['PMA_Theme']->getCssGradient('333', '444'); ?>
 }
 
 .format_specific_options h3 {
@@ -2630,14 +2654,16 @@ fieldset .disabled-field td {
 }
 
 .navigation {
+    display: inline-block;
     margin: .8em 0;
 
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('eeeeee', 'cccccc'); ?>
 }
+
+#sqlqueryresults>form[action="sql.php"] {display:none}
+#displayOptionsForm {display:block !important; margin-bottom: 1.2em}
 
 .navigation td {
     margin: 0;
@@ -2647,13 +2673,13 @@ fieldset .disabled-field td {
 }
 
 .navigation_separator {
-    color: #999;
+    color: #333;
     display: inline-block;
     font-size: 1.5em;
     text-align: center;
     height: 1.4em;
     width: 1.2em;
-    text-shadow: 1px 0 #FFF;
+    text-shadow: 1px 0 #111;
 }
 
 .navigation input[type=submit] {

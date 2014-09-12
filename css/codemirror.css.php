@@ -30,13 +30,13 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 /* GUTTER */
 
 .CodeMirror-gutters {
-  border-right: 1px solid #ddd;
-  background-color: #f7f7f7;
+  border-right: 1px solid #222;
+  background-color: #111;
   white-space: nowrap;
 }
 .CodeMirror-linenumbers {}
 .CodeMirror-linenumber {
-  padding: 0 3px 0 5px;
+  padding: 0 5px;
   min-width: 20px;
   text-align: right;
   color: #999;
@@ -45,7 +45,7 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 /* CURSOR */
 
 .CodeMirror div.CodeMirror-cursor {
-  border-left: 1px solid black;
+  border-left: 1px solid #fff;  
   z-index: 3;
 }
 /* Shown when moving in bi-directional text */
@@ -65,17 +65,17 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 
 /* DEFAULT THEME */
 
-.cm-s-default .cm-keyword {color: #708;}
+.cm-s-default .cm-keyword {color: #f7513c;}
 .cm-s-default .cm-atom {color: #219;}
-.cm-s-default .cm-number {color: #164;}
+.cm-s-default .cm-number {color: #fe0172;}
 .cm-s-default .cm-def {color: #00f;}
-.cm-s-default .cm-variable {color: black;}
-.cm-s-default .cm-variable-2 {color: #05a;}
+.cm-s-default .cm-variable {color: #fff;}
+.cm-s-default .cm-variable-2 {color: #ffa200;}
 .cm-s-default .cm-variable-3 {color: #085;}
-.cm-s-default .cm-property {color: black;}
-.cm-s-default .cm-operator {color: black;}
+.cm-s-default .cm-property {color: #fff;}
+.cm-s-default .cm-operator {color: #fff;}
 .cm-s-default .cm-comment {color: #a50;}
-.cm-s-default .cm-string {color: #a11;}
+.cm-s-default .cm-string {color: #ffce9f;}
 .cm-s-default .cm-string-2 {color: #f50;}
 .cm-s-default .cm-meta {color: #555;}
 .cm-s-default .cm-error {color: #f00;}
@@ -106,13 +106,14 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
    the editor. You probably shouldn't touch them. */
 
 .CodeMirror {
-  line-height: 1;
+  line-height: 1.2;
   position: relative;
   overflow: hidden;
-  background: white;
-  color: black;
-  font-family: monospace;
+  background: rgba(0,0,0,0.2);
+  color: #eee;
+  font-family: consolas, monospace;
   height: <?php echo ceil($GLOBALS['cfg']['TextareaRows'] * 1.2); ?>em;
+  margin-bottom: 1.2em;  
 }
 
 #inline_editor_outer .CodeMirror {

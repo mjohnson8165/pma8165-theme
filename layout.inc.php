@@ -18,13 +18,13 @@ $GLOBALS['cfg']['NaviWidth']                = 240;
 $GLOBALS['cfg']['NaviColor']                = '#ccc';
 
 // background for the navi frame
-$GLOBALS['cfg']['NaviBackground']           = '#222';
+$GLOBALS['cfg']['NaviBackground']           = 'rgba(0,0,0,0)';
 
 // foreground (text) color of the pointer in navi frame
 $GLOBALS['cfg']['NaviPointerColor']         = '#000';
 
 // background of the pointer in navi frame
-$GLOBALS['cfg']['NaviPointerBackground']    = '#ddd';
+$GLOBALS['cfg']['NaviPointerBackground']    = 'rgba(255,255,255,0.05)';
 
 /**
  * main frame
@@ -43,7 +43,7 @@ $GLOBALS['cfg']['BrowsePointerBackground']  = '#cfc';
 
 // foreground (text) color of the marker (visually marks row by clicking on it)
 // in browse mode
-$GLOBALS['cfg']['BrowseMarkerColor']        = '#000';
+$GLOBALS['cfg']['BrowseMarkerColor']        = '#fff';
 
 // background of the marker (visually marks row by clicking on it) in browse mode
 $GLOBALS['cfg']['BrowseMarkerBackground']   = '#fc9';
@@ -56,7 +56,7 @@ $GLOBALS['cfg']['BrowseMarkerBackground']   = '#fc9';
  * if not set the browser default will be used
  * (depending on browser, DTD and system settings)
  */
-$GLOBALS['cfg']['FontFamily']           = 'calibri, sans-serif';
+$GLOBALS['cfg']['FontFamily']           = 'sans-serif';
 /**
  * fixed width font family, used in textarea
  */
@@ -68,11 +68,11 @@ $GLOBALS['cfg']['FontFamilyFixed']      = 'consolas, monospace';
 // border
 $GLOBALS['cfg']['Border']               = 0;
 // table header and footer color
-$GLOBALS['cfg']['ThBackground']         = '#D3DCE3';
+$GLOBALS['cfg']['ThBackground']         = '#222';
 // table header and footer background
-$GLOBALS['cfg']['ThColor']              = '#eee';
+$GLOBALS['cfg']['ThColor']              = '#ccc';
 // table data row background
-$GLOBALS['cfg']['BgOne']                = '#333';
+$GLOBALS['cfg']['BgOne']                = 'rgba(0,0,0,0.2)';
 // table data row background, alternate
 $GLOBALS['cfg']['BgTwo']                = '#111';
 
