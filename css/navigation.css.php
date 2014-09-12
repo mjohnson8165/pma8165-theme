@@ -77,6 +77,8 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
     border: 0;
 }
 
+#pma_navigation #pmalogo {padding: 20px 0 5px 0}
+
 #pma_navigation #recentTableList select,
 #pma_navigation #serverChoice select
  {
@@ -106,16 +108,14 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 #pma_navigation_tree a {
     color: <?php echo $GLOBALS['cfg']['NaviColor']; ?>;
 }
-#pma_navigation_tree a:hover {
-    text-decoration: underline;
+#pma_navigation_tree li.table:hover a {
+    color: #fff;
 }
 #pma_navigation_tree li.activePointer {
     color: <?php echo $GLOBALS['cfg']['NaviPointerColor']; ?>;
-    background-color: <?php echo $GLOBALS['cfg']['NaviPointerBackground']; ?>;
 }
 #pma_navigation_tree li.selected {
-    color: <?php echo $GLOBALS['cfg']['NaviPointerColor']; ?>;
-    background-color: <?php echo $GLOBALS['cfg']['NaviPointerBackground']; ?>;
+    color: <?php echo $GLOBALS['cfg']['NaviPointerColor']; ?>;    
 }
 #pma_navigation_tree li .dbItemControls {
     padding-left: 4px;
@@ -268,14 +268,14 @@ li.fast_filter.db_fast_filter {
 }
 #pma_navigation_collapser {
     width: 20px;
-    height: 22px;
-    line-height: 22px;
+    height: 55px;
+    line-height: 55px;
     background: none;
     color: #d64937;
     font-weight: bold;
     position: fixed;
     top: 0;
-    padding-left:6px;
+    padding-left:12px;
     <?php echo $left; ?>: <?php echo $GLOBALS['cfg']['NaviWidth']; ?>px;
     text-align: center;
     cursor: pointer;

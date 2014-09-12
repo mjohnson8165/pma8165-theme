@@ -15,7 +15,7 @@
 $GLOBALS['cfg']['NaviWidth']                = 240;
 
 // foreground (text) color for the navi frame
-$GLOBALS['cfg']['NaviColor']                = '#ccc';
+$GLOBALS['cfg']['NaviColor']                = '#999';
 
 // background for the navi frame
 $GLOBALS['cfg']['NaviBackground']           = 'rgba(0,0,0,0)';
@@ -30,7 +30,7 @@ $GLOBALS['cfg']['NaviPointerBackground']    = 'rgba(255,255,255,0.05)';
  * main frame
  */
 // foreground (text) color for the main frame
-$GLOBALS['cfg']['MainColor']                = '#ccc';
+$GLOBALS['cfg']['MainColor']                = '#111';
 
 // background for the main frame
 $GLOBALS['cfg']['MainBackground']           = '#222';
@@ -56,7 +56,7 @@ $GLOBALS['cfg']['BrowseMarkerBackground']   = '#fc9';
  * if not set the browser default will be used
  * (depending on browser, DTD and system settings)
  */
-$GLOBALS['cfg']['FontFamily']           = 'sans-serif';
+$GLOBALS['cfg']['FontFamily']           = '"open sans", sans-serif';
 /**
  * fixed width font family, used in textarea
  */

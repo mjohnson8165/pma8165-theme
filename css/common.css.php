@@ -15,6 +15,51 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 ?>
 /******************************************************************************/
 
+
+/* CSS Reset */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video 
+{
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    font-family: 'Open Sans';
+}
+
+*:focus /* disable Chrome's and Safari's idiot input outline effect */
+{
+    outline: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section 
+{ 
+    display: block; 
+}
+
+ol, ul 
+{
+    list-style: none; 
+}
+
+blockquote, q 
+{
+    quotes: none; 
+}
+
+blockquote:before, blockquote:after, q:before, q:after 
+{ 
+    content: ''; 
+    content: none; 
+}
+
+table 
+{ 
+    border-collapse: collapse;
+    border-spacing: 0; 
+}
+
 /* general tags */
 html {
     font-size: <?php echo $_SESSION['PMA_Theme']->getFontSize(); ?>
@@ -43,6 +88,7 @@ body#loginform {
 }
 
 #page_content {
+    padding-left: .5em;
     margin: 0 .5em;
 }
 
@@ -89,9 +135,9 @@ h2 a img {
 }
 
 #table_results td.data {
-border-right: 1px solid #222;
-padding: 0.5em;
-line-height: 1em;
+    border-right: none;
+    padding: 0.5em;
+    line-height: 1.2em;
 }
 
 h3 {
@@ -146,10 +192,9 @@ dfn:hover {
 }
 
 th {
-    font-weight: bold;
+    font-weight: normal;
     color: <?php echo $GLOBALS['cfg']['ThColor']; ?>;
-    background: #191919;
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('222', '191919'); ?>
+    background: none;    
 }
 
 th span {
@@ -247,6 +292,9 @@ input.button:active {
 textarea {
     overflow: visible;
     height: <?php echo ceil($GLOBALS['cfg']['TextareaRows'] * 1.2); ?>em;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #ccc;
 }
 
 textarea.char {
@@ -315,7 +363,7 @@ table {
 }
 
 th {
-    border-right: 1px solid #333;
+    border-right: none;
     text-align: left;
 }
 
@@ -453,6 +501,7 @@ fieldset div[class=formelement] {
 }
 
 button.mult_submit {
+    color: #eee;
     border: none;
     background-color: transparent;
 }
@@ -460,7 +509,7 @@ button.mult_submit {
 /* odd items 1,3,5,7,... */
 table tr.odd th,
 .odd {
-    background: #131313;
+    background: #151515;
     <?php echo $_SESSION['PMA_Theme']->getCssIEClearFilter(); ?>
 }
 
@@ -468,7 +517,7 @@ table tr.odd th,
 /* (tested on CRTs and ACLs) */
 table tr.even th,
 .even {
-    background: #0c0c0c;
+    background: none;
     <?php echo $_SESSION['PMA_Theme']->getCssIEClearFilter(); ?>
 }
 
@@ -695,7 +744,7 @@ div.error {
 }
 
 div.error h1 {
-    border-color: #ff0000;
+    display:none;
 }
 
 .confirmation {
@@ -728,6 +777,8 @@ div.tools,
     font-weight: normal;
     color: <?php echo $GLOBALS['cfg']['ThColor']; ?>;
     background: <?php echo $GLOBALS['cfg']['ThBackground']; ?>;
+    background: none;
+    padding-top: 12px;
 }
 
 .tblHeaders a:link,
@@ -769,8 +820,24 @@ div.tools a:hover,
 
 tr.disabled td,
 td.disabled {
-    background-color: #f3f3f3;
-    color: #aaa;
+    background-color: transparent;
+    color: #555;
+}
+
+.pma_table tr:hover td,
+.pma_table tr:hover th,
+.data tr:hover td,
+.data tr:hover th {
+    text-shadow: none !important;
+    background: #d64937 !important; 
+    color: #fff !important;
+}
+
+.pma_table tr:hover td,
+.pma_table tr:hover th,
+.data tr:hover th *,
+.data tr:hover td * {
+    color: #fff !important
 }
 
 .nowrap {
@@ -853,7 +920,7 @@ ul#topmenu2 li {
 }
 
 .menucontainer {
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('222', '1a1a1a'); ?>
+    background: rgba(0,0,0,0.1);
     border-top: 1px solid #111;
 }
 
@@ -868,11 +935,8 @@ ul#topmenu2 a {
     margin-<?php echo $left; ?>: 0;
     padding: 4px 10px;
     white-space: nowrap;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    background: #f2f2f2;
+    border: 1px solid transparent;    
+    background: none;
 
 }
 
@@ -905,16 +969,16 @@ ul#topmenu ul.only {
 }
 
 ul#topmenu > li {
-    border-right: 1px solid #333;
-    -moz-box-shadow: inset -1px 0 0 rgba(0,0,0,0.5);
-    -webkit-box-shadow: inset -1px 0 0 rgba(0,0,0,0.5);
-    box-shadow: inset -1px 0 0 rgba(0,0,0,0.5);
+    border-right: 1px solid #202020;
+    -moz-box-shadow: inset -1px 0 0 rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset -1px 0 0 rgba(0,0,0,0.3);
+    box-shadow: inset -1px 0 0 rgba(0,0,0,0.3);
 }
 
 /* default tab styles */
 ul#topmenu a,
 ul#topmenu span {
-    padding: .6em;
+    padding: .6em 1.2em;
     color: #ccc;
     text-shadow: 1px 1px 1px #0c0c0c;
 }
@@ -951,9 +1015,11 @@ ul#topmenu .tabactive {
 ul#topmenu2 a.tab:hover,
 ul#topmenu2 a.tabactive {
     background-color: <?php echo $GLOBALS['cfg']['BgOne']; ?>;
-    border-radius: .3em;
-    -moz-border-radius: .3em;
-    -webkit-border-radius: .3em;
+    border-color: rgba(255,255,255,0.1);
+    color: #fff;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
     text-decoration: none;
 }
 
@@ -1036,25 +1102,27 @@ div#tablestatistics table {
 #serverinfo {
     border-bottom: 1px solid #191919;
     background: #1a1a1a;
-    padding: .3em .9em;
+    padding: 20px 5px 5px 0;
     padding-<?php echo $left; ?>: 2.2em;
     text-shadow: 0 1px 0 #000;
     width: 10000px;
     overflow: hidden;
+    min-height: 33px;    
 }
 
 #serverinfo .item {
     white-space: nowrap;
     color: #999;
+    margin: 0 5px;
 }
 
 #goto_pagetop {
     position: fixed;
     padding: .25em .25em .2em;
-    top: 0;
-    <?php echo $right; ?>: 0;
+    top: 18px;    
+    <?php echo $right; ?>: 12px;
     z-index: 900;
-    background: #888;
+    background: none;
 }
 
 #span_table_comment {
@@ -1717,7 +1785,10 @@ div.sqlvalidate {
 
 #result_query div.sqlOuter {
     background: <?php echo $GLOBALS['cfg']['BgOne']; ?>;
-    padding: 1em;
+    padding: .3em .5em;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
 }
 
 #PMA_slidingMessage code.sql,
@@ -1872,19 +1943,20 @@ input[type=date].invalid_value,
     background-image: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('ajax_clock_small.gif');?>);
     background-repeat: no-repeat;
     background-position: 2%;
-    border: 1px solid #e2b709;
+    border: 1px solid #252525;
  }
 
 /* additional styles */
 .ajax_notification {
     margin-top: 200px;
-    background: #ffe57e;
+    background: #222;
+    color: #999;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    box-shadow: 0 5px 90px #888;
-    -moz-box-shadow: 0 5px 90px #888;
-    -webkit-box-shadow: 0 5px 90px #888;
+    box-shadow: 0 5px 50px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 5px 50px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 5px 50px rgba(0,0,0,0.5);
 }
 
 #loading_parent {
@@ -2820,4 +2892,24 @@ body .ui-widget {
 .report-description {
     height:10em;
     width:570px;
+}
+
+.icon {display:none}
+.icon.ic_s_top,
+.error .icon-checkthis {
+    display:inline-block;
+}
+
+#sqlqueryresults.ajax fieldset a,
+.tabLinks a,
+p a[target=print_view] {
+    margin: 0 5px
+}
+fieldset legend {display:none}
+#sqlqueryresults.ajax fieldset {background: rgba(0,0,0,0.1)}
+
+thead > tr * {
+    background: none !important;
+    color: inherit !important;
+    text-shadow: inherit !important;
 }
