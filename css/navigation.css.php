@@ -23,7 +23,7 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
     top: 0;
     <?php echo $left; ?>: 0;
     height: 100%;
-    background: url(./themes/pma8165/img/left_nav_bg.png) repeat-y right 0% <?php echo $GLOBALS['cfg']['NaviBackground']; ?>;
+    background: <?php echo $GLOBALS['cfg']['NaviBackground']; ?>;
     color: <?php echo $GLOBALS['cfg']['NaviColor']; ?>;
     z-index: 800;
 }
@@ -259,7 +259,7 @@ li.fast_filter.db_fast_filter {
 #pma_navigation_resizer {
     width: 3px;
     height: 100%;
-    background-color: #aaa;
+    background-color: #111;
     cursor: col-resize;
     position: fixed;
     top: 0;

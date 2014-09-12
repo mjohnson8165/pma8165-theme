@@ -2,6 +2,7 @@
 /* vim: set expandtab sw=4 ts=4 sts=4: */
 /**
  * Common styles for the pma8165 theme
+ * orange: #d64937
  *
  * @package    PhpMyAdmin-theme
  * @subpackage PMA8165
@@ -33,8 +34,8 @@ body {
     padding: 0;
     margin: 0;
     margin-<?php echo $left; ?>: 240px;
-    color: #444;
-    background: #fff;
+    color: #999;
+    background: #1a1a1a;
 }
 
 body#loginform {
@@ -66,7 +67,7 @@ h2 {
     text-shadow: 0 1px 0 #fff;
     padding: 10px 0 10px;
     padding-<?php echo $left; ?>: 3px;
-    color: #777;
+    color: #c00;
 }
 
 /* Hiding icons in the page titles */
@@ -100,15 +101,14 @@ a:link,
 a:visited,
 a:active {
     text-decoration: none;
-    color: #235a81;
+    color: #d64937;
     cursor: pointer;
     outline: none;
 
 }
 
-a:hover {
-    text-decoration: underline;
-    color: #235a81;
+a:hover {    
+    color: #fff;
 }
 
 #initials_table {
@@ -131,7 +131,7 @@ a:hover {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('ffffff', 'cccccc'); ?>
+    <?php echo $_SESSION['PMA_Theme']->getCssGradient('ff0000', '00ff00'); ?>
 }
 
 dfn {
@@ -171,9 +171,9 @@ input[type=text],
 input[type=password],
 input[type=number],
 input[type=date] {
-    border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
 
     box-shadow: 0 1px 2px #ddd;
     -moz-box-shadow: 0 1px 2px #ddd;
@@ -321,18 +321,18 @@ input[type="radio"] {
 
 
 select {
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
 
     -moz-box-shadow: 0 1px 2px #ddd;
     -webkit-box-shadow: 0 1px 2px #ddd;
     box-shadow: 0 1px 2px #ddd;
 
-    border: 1px solid #aaa;
-    color: #333;
+    border: 1px solid #333;
+    color: #ccc;
     padding: 3px;
-    background: white;
+    background: #111;
 }
 
 select[multiple] {
@@ -638,9 +638,9 @@ div.error {
     -webkit-border-radius: 5px;
     border-radius: 5px;
 
-    -moz-box-shadow: 0 1px 1px #fff inset;
-    -webkit-box-shadow: 0 1px 1px #fff inset;
-    box-shadow: 0 1px 1px #fff inset;
+    -moz-box-shadow: 0 1px 1px #000 inset;
+    -webkit-box-shadow: 0 1px 1px #000 inset;
+    box-shadow: 0 1px 1px #000 inset;
 }
 
 .success a,
@@ -663,13 +663,13 @@ div.success {
 }
 
 .notice {
-    color: #000;
-    background-color: #e8eef1;
+    color: #ddd;
+    background-color: #222;
 }
 
 h1.notice,
 div.notice {
-    border-color: #3a6c7e;
+    border-color: #111;
 }
 
 .notice h1 {
@@ -677,9 +677,9 @@ div.notice {
 }
 
 .error {
-    border: 1px solid maroon !important;
-    color: #000;
-    background: pink;
+    border: 1px solid rgba(0,0,0,0.5) !important;
+    color: #fff;
+    background: #d64937;
 }
 
 h1.error,
@@ -1717,29 +1717,29 @@ div.sqlvalidate {
 
 .group {
 
-    border: 1px solid #999;
-    background: #f3f3f3;
+    border: 1px solid #222;
+    background: #1a1a1a;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
-    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>2px 2px 5px #ccc;
-    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>2px 2px 5px #ccc;
-    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>2px 2px 5px #ccc;
+    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>2px 2px 5px #000;
+    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>2px 2px 5px #000;
+    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>2px 2px 5px #000;
     margin-bottom: 1em;
     padding-bottom: 1em;
 }
 
 .group h2 {
-    background-color: #bbb;
-    padding: .1em .3em;
+    background-color: #2a2a2a;
+    padding: .3em .3em;
     margin-top: 0;
     color: #fff;
-    font-size: 1.6em;
+    font-size: 1.4em;
     font-weight: normal;
-    text-shadow: 0 1px 0 #777;
-    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 15px #999 inset;
-    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 15px #999 inset;
-    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 15px #999 inset;
+    text-shadow: 0 1px 1px #000;
+    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 15px #222 inset;
+    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 15px #222 inset;
+    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 15px #222 inset;
 }
 
 .group-cnt {
@@ -2626,7 +2626,7 @@ fieldset .disabled-field td {
 }
 
 #page_content {
-    background-color: white;
+    background-color: #1a1a1a;
 }
 
 .navigation {

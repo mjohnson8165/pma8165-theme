@@ -15,10 +15,10 @@
 $GLOBALS['cfg']['NaviWidth']                = 240;
 
 // foreground (text) color for the navi frame
-$GLOBALS['cfg']['NaviColor']                = '#000';
+$GLOBALS['cfg']['NaviColor']                = '#ccc';
 
 // background for the navi frame
-$GLOBALS['cfg']['NaviBackground']           = '#f3f3f3';
+$GLOBALS['cfg']['NaviBackground']           = '#222';
 
 // foreground (text) color of the pointer in navi frame
 $GLOBALS['cfg']['NaviPointerColor']         = '#000';
@@ -30,10 +30,10 @@ $GLOBALS['cfg']['NaviPointerBackground']    = '#ddd';
  * main frame
  */
 // foreground (text) color for the main frame
-$GLOBALS['cfg']['MainColor']                = '#000';
+$GLOBALS['cfg']['MainColor']                = '#ccc';
 
 // background for the main frame
-$GLOBALS['cfg']['MainBackground']           = '#F5F5F5';
+$GLOBALS['cfg']['MainBackground']           = '#222';
 
 // foreground (text) color of the pointer in browse mode
 $GLOBALS['cfg']['BrowsePointerColor']       = '#000';
@@ -56,11 +56,11 @@ $GLOBALS['cfg']['BrowseMarkerBackground']   = '#fc9';
  * if not set the browser default will be used
  * (depending on browser, DTD and system settings)
  */
-$GLOBALS['cfg']['FontFamily']           = 'sans-serif';
+$GLOBALS['cfg']['FontFamily']           = 'calibri, sans-serif';
 /**
  * fixed width font family, used in textarea
  */
-$GLOBALS['cfg']['FontFamilyFixed']      = 'monospace';
+$GLOBALS['cfg']['FontFamilyFixed']      = 'consolas, monospace';
 
 /**
  * tables
@@ -70,11 +70,11 @@ $GLOBALS['cfg']['Border']               = 0;
 // table header and footer color
 $GLOBALS['cfg']['ThBackground']         = '#D3DCE3';
 // table header and footer background
-$GLOBALS['cfg']['ThColor']              = '#000';
+$GLOBALS['cfg']['ThColor']              = '#eee';
 // table data row background
-$GLOBALS['cfg']['BgOne']                = '#E5E5E5';
+$GLOBALS['cfg']['BgOne']                = '#333';
 // table data row background, alternate
-$GLOBALS['cfg']['BgTwo']                = '#D5D5D5';
+$GLOBALS['cfg']['BgTwo']                = '#111';
 
 /**
  * query window
