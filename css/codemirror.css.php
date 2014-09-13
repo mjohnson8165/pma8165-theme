@@ -24,15 +24,21 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 }
 
 .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
-  background-color: white; /* The little square between H and V scrollbars */
+  background-color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>; /* The little square between H and V scrollbars */
 }
 
 /* GUTTER */
 
 .CodeMirror-gutters {
   border-right: 1px solid #222;
-  background-color: #111;
+  background-color: #151515;
   white-space: nowrap;
+  -webkit-border-top-left-radius: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -moz-border-radius-topleft: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 .CodeMirror-linenumbers {}
 .CodeMirror-linenumber {
@@ -109,7 +115,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
   line-height: 1.2;
   position: relative;
   overflow: hidden;
-  background: rgba(0,0,0,0.2);
+  background: none;
   color: #eee;
   font-family: consolas, monospace;
   height: <?php echo ceil($GLOBALS['cfg']['TextareaRows'] * 1.2); ?>em;

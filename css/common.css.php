@@ -2,7 +2,7 @@
 /* vim: set expandtab sw=4 ts=4 sts=4: */
 /**
  * Common styles for the pma8165 theme
- * orange: #d64937
+ * orange: <?php echo $GLOBALS['cfg']['ControlColor']; ?>
  *
  * @package    PhpMyAdmin-theme
  * @subpackage PMA8165
@@ -88,7 +88,7 @@ body#loginform {
 }
 
 #page_content {
-    padding-left: .5em;
+    padding-left: 12px;
     margin: 0 .5em;
 }
 
@@ -149,7 +149,7 @@ a:link,
 a:visited,
 a:active {
     text-decoration: none;
-    color: #d64937;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
     cursor: pointer;
     outline: none;
 
@@ -257,7 +257,7 @@ input.button {
     padding: 3px 7px;
     color: #fff;
     text-decoration: none;
-    background: #d64937;
+    background: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
 
     border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -308,7 +308,7 @@ fieldset {
     -webkit-border-radius: 4px 4px 0 0;
     border: 1px solid rgba(255,255,255,0.1);
     padding: 1.5em;
-    background: none;
+    background: rgba(0,0,0,0.1);
     text-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
     -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
     -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
@@ -320,7 +320,6 @@ fieldset fieldset {
     background: #fff;
     border: 1px solid #aaa;
     background: #E8E8E8;
-
 }
 
 fieldset legend {
@@ -464,7 +463,7 @@ div.tools {
 }
 
 div.tools a {
-    color: #d64937 !important;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
 }
 
 div.tools,
@@ -494,6 +493,11 @@ fieldset .formelement {
     /* IE */
     white-space: nowrap;
 }
+/*
+fieldset .formelement label {margin-right: 1em}
+fieldset .formelement label:first-child {margin-right: 0}
+*/
+fieldset .formelement input[type=checkbox] {margin-left: 2em}
 
 /* revert for Gecko */
 fieldset div[class=formelement] {
@@ -705,8 +709,12 @@ div.error {
 }
 
 .success {
-    color: #fff;
-    background-color: #1c2e1d;
+    color: <?php echo $GLOBALS['cfg']['SuccessText']; ?>;
+    background-color: transparent;
+    border: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
 }
 
 h1.success,
@@ -735,7 +743,7 @@ div.notice {
 .error {
     border: 1px solid rgba(0,0,0,0.5) !important;
     color: #fff;
-    background: #d64937;
+    background: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
 }
 
 h1.error,
@@ -829,7 +837,7 @@ td.disabled {
 .data tr:hover td,
 .data tr:hover th {
     text-shadow: none !important;
-    background: #d64937 !important; 
+    background: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important; 
     color: #fff !important;
 }
 
@@ -920,13 +928,21 @@ ul#topmenu2 li {
 }
 
 .menucontainer {
-    background: rgba(0,0,0,0.1);
-    border-top: 1px solid #111;
+    background: <?php echo $GLOBALS['cfg']['HeaderBackground']; ?>;
+    padding-top: 1px;
+    -moz-box-shadow: 0px 8px 10px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0px 8px 10px rgba(0,0,0,0.5);
+    box-shadow: -5px 8px 10px rgba(0,0,0,0.2);
+    padding-bottom: .89em;
+    margin-bottom: .5em;
+    margin-left: -3px;
 }
+
+ul#topmenu {margin-left: 20px}
 
 /* default tab styles */
 .tabactive {
-    background: #d64937 !important;
+    background: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
 }
 
 ul#topmenu2 a {
@@ -941,16 +957,16 @@ ul#topmenu2 a {
 }
 
 fieldset.caution a:first-child {
-    color: #d64937;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
     background: none;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
     padding: 4px 8px;
 }
 fieldset.caution a:hover {
     color: #fff;
-    background: #d64937;
+    background: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
 }
 
 #topmenu {
@@ -958,21 +974,16 @@ fieldset.caution a:hover {
     padding: .1em .3em;
 }
 
-ul#topmenu ul {
-    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 6px #ddd;
-    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>2px 2px 3px #666;
-    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>2px 2px 3px #666;
-}
-
 ul#topmenu ul.only {
     <?php echo $left; ?>: 0;
 }
 
-ul#topmenu > li {
-    border-right: 1px solid #202020;
-    -moz-box-shadow: inset -1px 0 0 rgba(0,0,0,0.3);
-    -webkit-box-shadow: inset -1px 0 0 rgba(0,0,0,0.3);
-    box-shadow: inset -1px 0 0 rgba(0,0,0,0.3);
+ul#topmenu > li a,
+ul#topmenu > li:hover a,
+ul#topmenu > li:hover {
+    -webkit-border-radius: 3px; 
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
 
 /* default tab styles */
@@ -980,7 +991,7 @@ ul#topmenu a,
 ul#topmenu span {
     padding: .6em 1.2em;
     color: #ccc;
-    text-shadow: 1px 1px 1px #0c0c0c;
+    text-shadow: none;
 }
 
 ul#topmenu ul a {
@@ -999,7 +1010,7 @@ ul#topmenu > li > a:hover,
 ul#topmenu > li > .tabactive {
     text-decoration: none;
     color: #fff;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);    
 }
 
 ul#topmenu ul a:hover,
@@ -1007,7 +1018,7 @@ ul#topmenu ul .tabactive {
     text-decoration: none;
 }
 
-ul#topmenu a.tab:hover,
+ul#topmenu li:hover a.tab:hover,
 ul#topmenu .tabactive {
     background-color: <?php echo $GLOBALS['cfg']['MainBackground']; ?>;
 }
@@ -1017,9 +1028,9 @@ ul#topmenu2 a.tabactive {
     background-color: <?php echo $GLOBALS['cfg']['BgOne']; ?>;
     border-color: rgba(255,255,255,0.1);
     color: #fff;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
     text-decoration: none;
 }
 
@@ -1099,12 +1110,12 @@ div#tablestatistics table {
     width: 100%;
 }
 
-#serverinfo {
-    border-bottom: 1px solid #191919;
-    background: #1a1a1a;
-    padding: 20px 5px 5px 0;
-    padding-<?php echo $left; ?>: 2.2em;
-    text-shadow: 0 1px 0 #000;
+#serverinfo {    
+    background: <?php echo $GLOBALS['cfg']['HeaderBackground']; ?>;
+    margin-left: -3px !important;
+    padding: 20px 5px 6px 0;
+    padding-<?php echo $left; ?>: 40px;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
     width: 10000px;
     overflow: hidden;
     min-height: 33px;    
@@ -1112,7 +1123,7 @@ div#tablestatistics table {
 
 #serverinfo .item {
     white-space: nowrap;
-    color: #999;
+    color: rgba(255,255,255,0.5);
     margin: 0 5px;
 }
 
@@ -1326,9 +1337,11 @@ div#chartVariableSettings {
 }
 
 table#chartGrid div.monitorChart {
-    background: #EBEBEB;
+    background: none;
     width: 400px;
     height: 300px;
+    color: #eee;
+    border-color:transparent;
 }
 
 div#serverstatus div.tabLinks {
@@ -1462,7 +1475,6 @@ div#queryAnalyzerDialog table.queryNums {
 
 p.notice {
     margin: 1.5em 0;
-    border: 1px solid #151515;
     background-repeat: no-repeat;
         <?php if ($GLOBALS['text_dir'] === 'ltr') { ?>
     background-position: 10px 50%;
@@ -1473,12 +1485,10 @@ p.notice {
         <?php } ?>
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    border-radius: 4px;
-    -moz-box-shadow: 0 1px 1px rgba(255,255,255,0.1) inset;
-    -webkit-box-shadow: 0 1px 1px rgba(255,255,255,0.1) inset;
-    box-shadow: 0 1px 1px rgba(255,255,255,0.1) inset;
-    background: #252525;
-    color: #d4fb6a;
+    border-radius: 4px;    
+    background: none;
+    border: none;
+    color: #d4fb6a;     /* Nice green shade */
 }
 
 p.notice a {
@@ -1623,7 +1633,7 @@ div#tablefieldscontainer {
 
 div#tablefieldscontainer select {
     width: 100%;
-    background: #fff;
+    background: rgba(0,0,0,0.2);
     /* height: 12em; */
 }
 
@@ -1809,9 +1819,8 @@ div.sqlvalidate {
 }
 
 .group {
-
     border: 1px solid #222;
-    background: #1a1a1a;
+    background: transparent;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
@@ -1819,7 +1828,7 @@ div.sqlvalidate {
     -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>2px 2px 10px rgba(0,0,0,0.3);
     box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>2px 2px 10px rgba(0,0,0,0.3);
     margin-bottom: 1em;
-    padding-bottom: 1em;
+    padding-bottom: 1em;    
 }
 
 .group h2 {
@@ -1833,7 +1842,7 @@ div.sqlvalidate {
     -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 50px #191919 inset;
     -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 50px #191919 inset;
     box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 50px #191919 inset;
-    border-bottom: 1px solid rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(0,0,0,0.4);
 }
 
 .group-cnt {
@@ -2912,4 +2921,15 @@ thead > tr * {
     background: none !important;
     color: inherit !important;
     text-shadow: inherit !important;
+}
+
+fieldset.tblFooters {
+    border: none;
+    max-height: 1px;  
+    float:right;
+    margin-bottom: 1em;
+}
+fieldset.tblFooters input[type=submit] {
+    float: right;
+    margin-top: -60px;
 }

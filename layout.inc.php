@@ -1,4 +1,12 @@
 <?php
+
+// FIXME: make links on alert boxes white and add dashed underline to them
+// TODO: figure a way to inject OpenSans font or fallback to sans serif
+// FIXME: set wrapper on the search form (in table view) to transparent
+// TODO: replace logo_right.png with something that looks like this century
+
+// NOTE: the query statistics chart needs to be altered differently than css
+
 /* vim: set expandtab sw=4 ts=4 sts=4: */
 /**
  * configures general layout
@@ -18,13 +26,19 @@ $GLOBALS['cfg']['NaviWidth']                = 240;
 $GLOBALS['cfg']['NaviColor']                = '#999';
 
 // background for the navi frame
-$GLOBALS['cfg']['NaviBackground']           = 'rgba(0,0,0,0)';
+$GLOBALS['cfg']['NaviBackground']           = '#151515';
 
 // foreground (text) color of the pointer in navi frame
 $GLOBALS['cfg']['NaviPointerColor']         = '#000';
 
 // background of the pointer in navi frame
 $GLOBALS['cfg']['NaviPointerBackground']    = 'rgba(255,255,255,0.05)';
+
+// Background of header bar
+$GLOBALS['cfg']['HeaderBackground']         = '#222';
+$GLOBALS['cfg']['SuccessText']              = '#d4fb6a';
+$GLOBALS['cfg']['ControlColor']             = '#d64937';
+
 
 /**
  * main frame

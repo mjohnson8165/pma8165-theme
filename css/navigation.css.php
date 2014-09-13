@@ -227,6 +227,14 @@ li.fast_filter {
 li.fast_filter input {
     padding-<?php echo $right; ?>: 1.7em;
     width: 100%;
+    color: #ccc;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid #333;
+    padding:6px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font-size: .95em;
 }
 li.fast_filter span {
     position: relative;
@@ -234,7 +242,7 @@ li.fast_filter span {
     padding: 0.2em;
     cursor: pointer;
     font-weight: bold;
-    color: #800;
+    color: <?php echo $GLOBALS['cfg']['NaviWidth']; ?>;
 }
 /* IE10+ has its own reset X */
 html.ie li.fast_filter span {
@@ -259,10 +267,10 @@ li.fast_filter.db_fast_filter {
 #pma_navigation_resizer {
     width: 3px;
     height: 100%;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.1);    
     cursor: col-resize;
     position: fixed;
-    top: 0;
+    top: 8em;
     <?php echo $left; ?>: 237px;
     z-index: 801;
 }
@@ -271,14 +279,23 @@ li.fast_filter.db_fast_filter {
     height: 55px;
     line-height: 55px;
     background: none;
-    color: #d64937;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
     font-weight: bold;
     position: fixed;
     top: 0;
-    padding-left:12px;
+    padding-left: 20px;
     <?php echo $left; ?>: <?php echo $GLOBALS['cfg']['NaviWidth']; ?>px;
     text-align: center;
     cursor: pointer;
     z-index: 800;
     text-shadow: 0px 1px 1px rgba(0,0,0,0.5);        
+}
+
+#pma_navigation_header {
+    background: <?php echo $GLOBALS['cfg']['HeaderBackground']; ?>;
+    padding-bottom: 1em;
+    margin-bottom: .5em;
+    -moz-box-shadow: 5px 8px 10px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 5px 8px 10px rgba(0,0,0,0.15);
+    box-shadow: 5px 8px 10px rgba(0,0,0,0.15);
 }

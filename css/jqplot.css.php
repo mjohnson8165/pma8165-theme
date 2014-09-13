@@ -23,7 +23,7 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size: 1em;
 /*    height: 300px;
-    width: 590px;*/
+    width: 590px;*/    
 }
 
 /*rules applied to all axes*/
@@ -85,7 +85,7 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 	padding:1px 5px 1px;
 /*	background-color: white;*/
 	z-index: 2;
-	font-size: 1.5em;
+	font-size: 1.5em;    
 }
 
 .jqplot-y2axis-tick, .jqplot-y3axis-tick, .jqplot-y4axis-tick, .jqplot-y5axis-tick, .jqplot-y6axis-tick, .jqplot-y7axis-tick, .jqplot-y8axis-tick, .jqplot-y9axis-tick {
@@ -94,7 +94,7 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
     top: 15px;
 /*    padding-left: 10px;*/
 /*    padding-right: 15px;*/
-    text-align: <?php echo $left; ?>;
+    text-align: <?php echo $left; ?>;    
 }
 
 .jqplot-yMidAxis-tick {
@@ -154,7 +154,7 @@ table.jqplot-table-legend, table.jqplot-cursor-legend {
     background-color: rgba(255,255,255,0.6);
     border: 1px solid #cccccc;
     position: absolute;
-    font-size: 0.75em;
+    font-size: 0.75em;    
 }
 
 td.jqplot-table-legend {
