@@ -134,7 +134,7 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 }
 #pma_navigation_tree ul {
     clear: both;
-    padding: 0;
+    padding: 12px 0;
     list-style-type: none;
     margin: 0;
 }

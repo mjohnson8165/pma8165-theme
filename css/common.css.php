@@ -87,8 +87,8 @@ body#loginform {
     margin: 0;
 }
 
-#page_content {
-    padding-left: 12px;
+#page_content {    
+    padding: 0 12px;
     margin: 0 .5em;
 }
 
@@ -230,9 +230,9 @@ input[type=date] {
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
 
-    box-shadow: 0 1px 2px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 
     background: rgba(0,0,0,0.2);
     border: 1px solid rgba(255,255,255,0.1);
@@ -315,11 +315,9 @@ fieldset {
     box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
 }
 
-fieldset fieldset {
-    margin: .8em;
-    background: #fff;
-    border: 1px solid #aaa;
-    background: #E8E8E8;
+fieldset fieldset {    
+    border: none;
+    background: none;
 }
 
 fieldset legend {
@@ -350,7 +348,7 @@ button {
 table caption,
 table th,
 table td {
-    padding: 0.5em .5em;
+    padding: 0.5em 1em;
     margin: .1em;
     vertical-align: top;
     text-shadow: 0 1px 0 rgba(0,0,0,0.3);
@@ -502,6 +500,7 @@ fieldset .formelement input[type=checkbox] {margin-left: 2em}
 /* revert for Gecko */
 fieldset div[class=formelement] {
     white-space: normal;
+    line-height: 2em;
 }
 
 button.mult_submit {
@@ -539,8 +538,20 @@ td.marked,
 table tr.marked td,
 table tr.marked th,
 table tr.marked {
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('ff533d', 'd64937'); ?>
+    <?php //echo $_SESSION['PMA_Theme']->getCssGradient('ff533d', 'd64937'); ?>
+    background: #111;
+   /* border-top: 1px solid rgba(0,0,0,0.5);
+    border-bottom: 1px solid rgba(0,0,0,0.5);*/
     color: <?php echo $GLOBALS['cfg']['BrowseMarkerColor']; ?>;
+    -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.5) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.5) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.5) inset;
+}
+table tr.marked td:first-child {
+    border-left: 5px solid <?php echo $GLOBALS['cfg']['ControlColor']; ?>
+    -moz-box-shadow: 5px 0 0 <?php echo $GLOBALS['cfg']['ControlColor']; ?> inset;
+    -webkit-box-shadow: 5px 0 0 <?php echo $GLOBALS['cfg']['ControlColor']; ?> inset;
+    box-shadow: 5px 0 0 <?php echo $GLOBALS['cfg']['ControlColor']; ?> inset;
 }
 table tr.marked a {color: <?php echo $GLOBALS['cfg']['BrowseMarkerColor']; ?>; }
 <?php } ?>
@@ -673,7 +684,7 @@ td .icon {
 
 /* message boxes: error, confirmation */
 #pma_errors, #pma_demo {
-    padding: 0 0.5em;
+    padding: 0 20px;
 }
 
 .success h1,
@@ -789,6 +800,14 @@ div.tools,
     padding-top: 12px;
 }
 
+div.tools {
+    color: transparent;
+}
+
+div.tools * {
+    color: <?php echo $GLOBALS['cfg']['ThColor']; ?>;
+}
+
 .tblHeaders a:link,
 .tblHeaders a:active,
 .tblHeaders a:visited,
@@ -798,13 +817,13 @@ div.tools a:active,
 .tblFooters a:link,
 .tblFooters a:active,
 .tblFooters a:visited {
-    color: #0000FF;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
 }
 
 .tblHeaders a:hover,
 div.tools a:hover,
 .tblFooters a:hover {
-    color: #FF0000;
+    color: #fff !important;
 }
 
 /* forbidden, no privileges */
@@ -1979,8 +1998,11 @@ input[type=date].invalid_value,
 
 .exportoptions h3,
 .importoptions h3 {
-    border-bottom: 1px #999 solid;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
+    border-bottom: 1px dashed;
     font-size: 110%;
+    padding-bottom: .3em;
+    margin-bottom: .7em;
 }
 
 .exportoptions ul,
@@ -2745,6 +2767,7 @@ fieldset .disabled-field td {
 
 #sqlqueryresults>form[action="sql.php"] {display:none}
 #displayOptionsForm {display:block !important; margin-bottom: 1.2em}
+#displayoptions {overflow: hidden !important}
 
 .navigation td {
     margin: 0;
@@ -2905,7 +2928,7 @@ body .ui-widget {
 
 .icon {display:none}
 .icon.ic_s_top,
-.error .icon-checkthis {
+.error .icon {
     display:inline-block;
 }
 
@@ -2928,8 +2951,57 @@ fieldset.tblFooters {
     max-height: 1px;  
     float:right;
     margin-bottom: 1em;
+    background: none !important;
+    margin-bottom: -20px;
 }
 fieldset.tblFooters input[type=submit] {
     float: right;
     margin-top: -60px;
+}
+
+#fieldset_table_qbe table tr.noclick td,
+#fieldset_table_qbe table tr.noclick th {
+    line-height:2.8em;
+}
+
+div.group ul {
+    margin-left: 20px !important;
+    padding-left: 0 !important;
+}
+
+div.group ul li {    
+    list-style: none;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+div.group ul li label, 
+div.group ul li a {
+    width: 180px !important;
+    text-align: right;
+    display: inline-block;    
+}
+
+div.group ul li label *,
+div.group ul li a * {
+    float: right;
+}
+
+div.group ul li select {
+    width: 200px;
+    text-align: center;
+    margin-left: 12px
+}
+
+li#li_user_preferences a,
+div.group.pmagroup li a {
+    text-align: left;
+}
+
+#main_pane_left{
+    width: 50%;
+}
+
+#main_pane_right {
+    margin-left: 50%;
 }
