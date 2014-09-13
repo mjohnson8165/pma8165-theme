@@ -539,13 +539,11 @@ table tr.marked td,
 table tr.marked th,
 table tr.marked {
     <?php //echo $_SESSION['PMA_Theme']->getCssGradient('ff533d', 'd64937'); ?>
-    background: #111;
-   /* border-top: 1px solid rgba(0,0,0,0.5);
-    border-bottom: 1px solid rgba(0,0,0,0.5);*/
+    background: #0c0c0c;  
     color: <?php echo $GLOBALS['cfg']['BrowseMarkerColor']; ?>;
-    -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.5) inset;
-    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.5) inset;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.5) inset;
+    -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.3) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.3) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.3) inset;
 }
 table tr.marked td:first-child {
     border-left: 5px solid <?php echo $GLOBALS['cfg']['ControlColor']; ?>
@@ -1006,10 +1004,17 @@ ul#topmenu > li:hover {
 }
 
 /* default tab styles */
+
+ul#topmenu li {    
+    background: none !important;
+    border: none !important;
+}
+
 ul#topmenu a,
 ul#topmenu span {
+    margin-right: .5em;
     padding: .6em 1.2em;
-    color: #ccc;
+    color: #999;
     text-shadow: none;
 }
 
