@@ -2,8 +2,6 @@
 
 // FIXME: make links on alert boxes white and add dashed underline to them
 // TODO: figure a way to inject OpenSans font or fallback to sans serif
-// FIXME: set wrapper on the search form (in table view) to transparent
-// TODO: replace logo_right.png with something that looks like this century
 
 // NOTE: the query statistics chart needs to be altered differently than css
 
