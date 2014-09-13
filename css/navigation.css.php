@@ -298,4 +298,5 @@ li.fast_filter.db_fast_filter {
     -moz-box-shadow: 5px 8px 10px rgba(0,0,0,0.15);
     -webkit-box-shadow: 5px 8px 10px rgba(0,0,0,0.15);
     box-shadow: 5px 8px 10px rgba(0,0,0,0.15);
+    height: 92px;
 }

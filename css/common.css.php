@@ -3010,3 +3010,7 @@ div.group.pmagroup li a {
 #main_pane_right {
     margin-left: 50%;
 }
+
+#pma_quick_warp {
+    display: none;
+}
