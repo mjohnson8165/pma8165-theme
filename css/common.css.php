@@ -1,8 +1,7 @@
 <?php
 /* vim: set expandtab sw=4 ts=4 sts=4: */
 /**
- * Common styles for the pma8165 theme
- * orange: <?php echo $GLOBALS['cfg']['ControlColor']; ?>
+ * Common styles for the pma8165 theme 
  *
  * @package    PhpMyAdmin-theme
  * @subpackage PMA8165
@@ -2931,8 +2930,15 @@ body .ui-widget {
     width:570px;
 }
 
+/* Hide ALL icons */
 .icon {display:none}
+
+/* Display SOME icons */
 .icon.ic_s_top,
+.icon.ic_b_plus,
+.icon.ic_b_minus,
+.menucontainer .icon,
+#navipanellinks .icon,
 .error .icon {
     display:inline-block;
 }
@@ -3013,4 +3019,83 @@ div.group.pmagroup li a {
 
 #pma_quick_warp {
     display: none;
+}
+
+#navipanellinks {
+    text-align: center;
+    padding: 1em 0;
+}
+#navipanellinks a {
+    margin: 0 .35em;
+}
+
+#pma_navigation_tree div.block {
+    margin-top: 3px;
+}
+
+#pma_navigation_tree li > i {
+    color: <?php echo $GLOBALS['cfg']['NaviColor']; ?>;
+}
+
+#pma_navigation_tree li.new_table a.hover_show_full {        
+    line-height:32px;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
+}
+
+#pma_navigation_tree li.new_table a.hover_show_full:hover {
+    color: #eee;
+}
+
+#pma_navigation_tree li.new_table {
+    margin-bottom: -8px;
+}
+
+#pma_navigation_tree div.block u {
+    margin-top: -6px;
+}
+
+#pma_navigation_tree div.block u icon.ic_b_plus, 
+#pma_navigation_tree div.block u icon.ic_b_minus {
+    margin-top: 5px;
+}
+
+.selectallarrow {
+    margin-top: -13px;
+}
+
+#pma_navigation_tree_content ul li.database.selected {
+    margin-bottom: -12px;
+}
+
+#inline_editor_outer input[type=button], 
+#inline_editor_outer input[type=submit] {
+    margin-bottom: 1em;
+}
+
+#sqlqueryresults.ajax br {display:none}
+
+input[type="checkbox"],
+input[type="radio"] {
+    display:inline-block;
+    width:16px;
+    height:16px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+#tableuserrights.data span[style] {
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
+}
+
+#edit_user_dialog h2 {
+    margin: 1em 0;
+}
+
+#fieldset_add_user_login hr {
+    display: none;
+}
+
+#fieldset_add_user_login div.item {
+    border-bottom: none;
 }

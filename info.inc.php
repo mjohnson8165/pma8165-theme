@@ -15,13 +15,7 @@
 // Thorough TODO list //
 ////////////////////////
 
-// TODO: Add + and - signs for items in the nav tree
-// TODO: Add icon for the new db / table control in the nav tree
-// FIXME: Change the icon in .error divs with a white exclamation sign
 // FIXME: Fix hover state in database entries in the nav tree
-// TODO: Replace the icon in the filter by name and regex box
-// TODO: Flatten the favorite icons in database structure view
-// TODO: Add controls (text + icons) for recent and favorite tables under the pma logo
 // TODO: Replace the serverinfo bar delimiters with icons
 // FIXME: Remove hover effect on the first row (thead) of the structure table
 // TODO: Remove the white background on hovering over index options
@@ -38,16 +32,11 @@
 // TODO: Style the toggle control in Events and show fieldset legend
 // FIXME: Fix vertical alignment for column ordering in Browse sections
 // TODO: Bring order and peace in the chart section (accessible by the Display chart link in Browse mode)
-// FIXME: Fix alignment of Go and Cancel buttons in the Inline sql editor and add some padding to the code area
-// TODO: Hide unnecessary line breaks before Explain SQL area
-// TODO: Style all checkboxes to match the other inputs
 // TODO: Force regular font ussage in textarea elements (i.e. Insert section)
 // FIXME: Fix textarea and Go button alignment in the Insert section
 // TODO: Remove hover effect on the rows in the Insert section
 // FIXME: Fix the vertical alignment of column names, types and select elements in the Insert section
-// TODO: Force the #FF0000 span elements in the Users overview table to use a more pleasant color
 // FIXME: Fix vertical alignment for form elements (labels, selects, buttons) in the Edit Privileges section
-// TODO: Remove the HR elements from the Edit Privileges section
 // TODO: Add some padding for the section elements with privilege names at the bottom of Edit Privileges
 // FIXME: Fix horizontal alignment for limit controls in the bottom section of Edit Privileges
 // TODO: Push the H2 in Edit Privileges way more to the left

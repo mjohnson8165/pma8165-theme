@@ -212,6 +212,7 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
     border-<?php echo $left; ?>: 1px solid #666;
     margin-<?php echo $left; ?>: 0.75em;
     padding-<?php echo $left; ?>: 0.75em;
+    margin-top: -14px;
 }
 #pma_navigation_tree .last > .list_container {
     border-<?php echo $left; ?>: 0 solid #666;
@@ -242,7 +243,7 @@ li.fast_filter span {
     padding: 0.2em;
     cursor: pointer;
     font-weight: bold;
-    color: <?php echo $GLOBALS['cfg']['NaviWidth']; ?>;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
 }
 /* IE10+ has its own reset X */
 html.ie li.fast_filter span {
