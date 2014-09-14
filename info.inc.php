@@ -15,17 +15,9 @@
 // Thorough TODO list //
 ////////////////////////
 
-// FIXME: Fix hover state in database entries in the nav tree
-// TODO: Replace the serverinfo bar delimiters with icons
 // FIXME: Remove hover effect on the first row (thead) of the structure table
-// TODO: Remove the white background on hovering over index options
-// FIXME: Fix vertical alignment of selection controls right under the structure table
 // TODO: Make the selection buttons look like ones and style both inactive and hover states
-// TODO: Add more spacing between the controls under structure table (print, propose, etc)
-// TODO: Add more spacing between the new column controls (at end / begining of table)
-// TODO: Remove background and border of lower fieldset wrapper in Structure (usage, statistics)
 // FIXME: Display the fieldset legend in the Options section of the Search section
-// TODO: Move the Go and Reset buttons on the same line as the rest of the controls under Insert
 // TODO: Align the H3 and Go button in the Export section properly and style the H3 differently
 // TODO: Show fieldset legents in the Operations section and push the Go buttons below the controls
 // TODO: Style the jQueryUI modals accordingly i.e. Routines, Events, Triggers sections
@@ -34,7 +26,6 @@
 // TODO: Bring order and peace in the chart section (accessible by the Display chart link in Browse mode)
 // TODO: Force regular font ussage in textarea elements (i.e. Insert section)
 // FIXME: Fix textarea and Go button alignment in the Insert section
-// TODO: Remove hover effect on the rows in the Insert section
 // FIXME: Fix the vertical alignment of column names, types and select elements in the Insert section
 // FIXME: Fix vertical alignment for form elements (labels, selects, buttons) in the Edit Privileges section
 // TODO: Add some padding for the section elements with privilege names at the bottom of Edit Privileges

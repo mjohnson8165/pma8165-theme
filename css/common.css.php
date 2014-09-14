@@ -553,24 +553,6 @@ table tr.marked td:first-child {
 table tr.marked a {color: <?php echo $GLOBALS['cfg']['BrowseMarkerColor']; ?>; }
 <?php } ?>
 
-<?php if ($GLOBALS['cfg']['BrowsePointerEnable']) { ?>
-/* hovered items */
-.odd:hover,
-.even:hover,
-.hover {
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('eee', 'e5e5e5'); ?>
-    color: <?php echo $GLOBALS['cfg']['BrowsePointerColor']; ?>;    
-}
-
-/* hovered table rows */
-table tr.odd:hover th,
-table tr.even:hover th,
-table tr.hover th {
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('ced6df', 'b6c6d7'); ?>
-    color: <?php echo $GLOBALS['cfg']['BrowsePointerColor']; ?>;    
-}
-<?php } ?>
-
 /**
  * marks table rows/cells if the db field is in a where condition
  */
@@ -3067,6 +3049,10 @@ div.group.pmagroup li a {
     margin-bottom: -12px;
 }
 
+#pma_navigation_tree_content ul li.database:hover > a {
+    color: #eee !important;
+}
+
 #inline_editor_outer input[type=button], 
 #inline_editor_outer input[type=submit] {
     margin-bottom: 1em;
@@ -3098,4 +3084,64 @@ input[type="radio"] {
 
 #fieldset_add_user_login div.item {
     border-bottom: none;
+}
+
+// Remove button floating for certain forms
+.disableAjax.login .tblFooters #input_go {
+    float: none;
+}
+
+#actions_panel {
+    padding: 1em 0 0;
+    margin: 0 0 1em;    
+}
+
+#actions_panel table td.right.vmiddle {
+    position: absolute;
+    margin-top: -40px;
+    right: 40px;
+}
+
+#continueForm {
+    padding-bottom: 2em;
+}
+
+#serverinfo span.separator {
+    background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('nav_delimiter.png');?>) no-repeat 50% 100%;
+    display: inline-block;
+    text-indent: -9999px;
+    min-width: 16px;
+    max-width: 16px;
+}
+
+#structure-action-links a {
+    margin: 0 .5em;
+}
+
+#structure-action-links a img {
+    display: none;
+}
+
+#index_div {
+    margin: 1em 0;
+}
+
+#tablestatistics fieldset {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+#addColumns input[type=radio] {
+    margin-left: 1em;
+}
+
+div.slide-wrapper #indexes {
+    overflow: inherit !important;
+}
+
+#table_index tr:hover td,
+#table_index tr:hover th {
+    background: none !important;
 }
