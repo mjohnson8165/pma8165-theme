@@ -2932,12 +2932,6 @@ p a[target=print_view] {
 fieldset legend {display:none}
 #sqlqueryresults.ajax fieldset {background: rgba(0,0,0,0.1)}
 
-thead > tr * {
-    background: none !important;
-    color: inherit !important;
-    text-shadow: inherit !important;
-}
-
 fieldset.tblFooters {
     border: none;
     max-height: 1px;  
@@ -3085,11 +3079,6 @@ input[type="radio"] {
     border-bottom: none;
 }
 
-// Remove button floating for certain forms
-.disableAjax.login .tblFooters #input_go {
-    float: none;
-}
-
 #actions_panel {
     padding: 1em 0 0;
     margin: 0 0 1em;    
@@ -3143,4 +3132,32 @@ div.slide-wrapper #indexes {
 #table_index tr:hover td,
 #table_index tr:hover th {
     background: none !important;
+}
+
+// Remove button floating for certain forms
+.disableAjax.login .tblFooters {
+    float: none !important;
+}
+
+#loginform #input_go {
+    margin-right: -1.5em;
+    float: none !important;    
+}
+
+table.data thead tr:hover td,
+table.ajax thead tr:hover td,
+table.data thead tr:hover th,
+table.ajax thead tr:hover th {
+    background: none !important;
+    color: <?php echo $GLOBALS['cfg']['ThColor']; ?> !important;
+    text-shadow: inherit !important;
+}
+
+table.data thead a:hover,
+table.ajax thead a:hover {
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
+}
+
+.sort_arrow {    
+    margin-top: -3px !important;    
 }
