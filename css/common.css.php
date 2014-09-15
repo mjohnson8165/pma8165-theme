@@ -139,7 +139,8 @@ h2 a img {
 }
 
 h3 {
-    font-weight: bold;
+    font-weight: normal;
+    font-size: 2em !important;
 }
 
 a,
@@ -1026,9 +1027,7 @@ ul#topmenu .tabactive {
 }
 
 ul#topmenu2 a.tab:hover,
-ul#topmenu2 a.tabactive {
-    background-color: <?php echo $GLOBALS['cfg']['BgOne']; ?>;
-    border-color: rgba(255,255,255,0.1);
+ul#topmenu2 a.tabactive {    
     color: #fff;
     border-radius: 3px;
     -moz-border-radius: 3px;
@@ -1975,11 +1974,9 @@ input[type=date].invalid_value,
 
 .exportoptions h3,
 .importoptions h3 {
-    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
-    border-bottom: 1px dashed;
-    font-size: 110%;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;        
     padding-bottom: .3em;
-    margin-bottom: .7em;
+    margin-left: 5px;
 }
 
 .exportoptions ul,
@@ -2018,7 +2015,7 @@ input[type=date].invalid_value,
 .exportoptions #buttonGo,
 .importoptions #buttonGo {
     font-weight: bold;
-    margin-<?php echo $left; ?>: 14px;
+    margin-<?php echo $left; ?>: 3px;
     border: 1px solid #ff533d;
     padding: 5px 12px;
     color: #fff;
@@ -3371,4 +3368,9 @@ form#copy_db_form .tblFooters {
 
 #searchoptions #fieldset_display_order {
     margin-bottom: 2em;
+}
+
+.importoptions .formelementrow {
+    margin-left: 40px;
+    line-height: 2em;
 }

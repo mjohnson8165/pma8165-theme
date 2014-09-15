@@ -15,8 +15,6 @@
 // Thorough TODO list //
 ////////////////////////
 
-// TODO: Align the H3 and Go button in the Export section properly and style the H3 differently
-// TODO: Style the jQueryUI modals accordingly i.e. Routines, Events, Triggers sections
 // TODO: Bring order and peace in the chart section (accessible by the Display chart link in Browse mode)
 // TODO: Force regular font ussage in textarea elements (i.e. Insert section)
 // FIXME: Fix textarea and Go button alignment in the Insert section
