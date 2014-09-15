@@ -2897,8 +2897,8 @@ fieldset .disabled-field td {
 .ui-timepicker-rtl dl { text-align: right; }
 .ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
 
-.ui-datepicker-trigger {
-    margin-top: -3px;
+.ui-dialog-content .ui-datepicker-trigger {
+    margin-top: 4px;
     margin-left: 8px;
 }
 
@@ -3354,4 +3354,21 @@ form#copy_db_form .tblFooters {
 
 #db_search_form.ajax table.formlayout td {
     line-height: 2.5em;
+}
+
+#searchoptions fieldset {
+    border: 1px solid #2c2c2c;
+    background: rgba(0,0,0,0.2);    
+}
+
+#searchoptions #fieldset_select_fields {
+    margin-right: 2em;
+}
+
+#searchoptions #fieldset_select_fields #oDistinct {
+    margin-left: 1em;
+}
+
+#searchoptions #fieldset_display_order {
+    margin-bottom: 2em;
 }

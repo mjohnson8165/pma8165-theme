@@ -15,7 +15,6 @@
 // Thorough TODO list //
 ////////////////////////
 
-// FIXME: Display the fieldset legend in the Options section of the Search section
 // TODO: Align the H3 and Go button in the Export section properly and style the H3 differently
 // TODO: Style the jQueryUI modals accordingly i.e. Routines, Events, Triggers sections
 // TODO: Bring order and peace in the chart section (accessible by the Display chart link in Browse mode)
