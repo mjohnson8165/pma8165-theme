@@ -15,13 +15,11 @@
 // Thorough TODO list //
 ////////////////////////
 
-// TODO: Make the selection buttons look like ones and style both inactive and hover states
 // FIXME: Display the fieldset legend in the Options section of the Search section
 // TODO: Align the H3 and Go button in the Export section properly and style the H3 differently
 // TODO: Show fieldset legents in the Operations section and push the Go buttons below the controls
 // TODO: Style the jQueryUI modals accordingly i.e. Routines, Events, Triggers sections
 // TODO: Style the toggle control in Events and show fieldset legend
-// FIXME: Fix vertical alignment for column ordering in Browse sections
 // TODO: Bring order and peace in the chart section (accessible by the Display chart link in Browse mode)
 // TODO: Force regular font ussage in textarea elements (i.e. Insert section)
 // FIXME: Fix textarea and Go button alignment in the Insert section

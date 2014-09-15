@@ -86,7 +86,7 @@ body#loginform {
 }
 
 #page_content {    
-    padding: 0 12px;
+    padding: 0 12px 20px;
     margin: 0 .5em;
 }
 
@@ -300,17 +300,14 @@ textarea.char {
 }
 
 fieldset {
-    margin-top: 1em;
+    margin: 1em 0;
     border-radius: 4px 4px 0 0;
     -moz-border-radius: 4px 4px 0 0;
     -webkit-border-radius: 4px 4px 0 0;
     border: 1px solid rgba(255,255,255,0.1);
-    padding: 1.5em;
-    background: rgba(0,0,0,0.1);
+    padding: 1.5em;    
     text-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
-    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
-    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
-    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
+    background: rgba(0,0,0,0.1);
 }
 
 fieldset fieldset {    
@@ -319,17 +316,8 @@ fieldset fieldset {
 }
 
 fieldset legend {
-    font-weight: bold;
     color: #ccc;
-    padding: 5px 10px;
-    border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border: 1px solid rgba(255,255,255,0.1);
-    background-color: #222;
-    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>3px 3px 15px rgba(0,0,0,0.3);
-    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>3px 3px 15px rgba(0,0,0,0.3);
-    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>3px 3px 15px rgba(0,0,0,0.3);
+    padding: 5px 10px;   
     max-width: 100%;    
 }
 
@@ -662,7 +650,7 @@ td .icon {
 
 /* message boxes: error, confirmation */
 #pma_errors, #pma_demo {
-    padding: 0 20px;
+    margin: 0 20px;
 }
 
 .success h1,
@@ -2738,7 +2726,7 @@ fieldset .disabled-field td {
 }
 
 #page_content {
-    background-color: #1a1a1a;
+    background-color: <?php echo $GLOBALS['cfg']['PageBackground']; ?>;
 }
 
 .navigation {
@@ -2960,7 +2948,7 @@ body .ui-widget {
 p a[target=print_view] {
     margin: 0 5px
 }
-fieldset legend {display:none}
+
 #sqlqueryresults.ajax fieldset {background: rgba(0,0,0,0.1)}
 
 fieldset.tblFooters {
@@ -3180,9 +3168,13 @@ div.slide-wrapper #indexes {
 }
 
 table.data thead tr:hover td,
+table.data tfoot tr:hover td,
 table.ajax thead tr:hover td,
+table.ajax tfoot tr:hover td,
 table.data thead tr:hover th,
-table.ajax thead tr:hover th {
+table.data tfoot tr:hover th,
+table.ajax thead tr:hover th,
+table.ajax tfoot tr:hover th {
     background: none !important;
     color: <?php echo $GLOBALS['cfg']['ThColor']; ?> !important;
     text-shadow: inherit !important;
@@ -3205,12 +3197,52 @@ table#sticky_columns thead a:hover {
     border-bottom: 2px solid rgba(0,0,0,0.2);
 }
 
-#resultsForm.ajax button.mult_submit {
+form.ajax button.mult_submit {
     margin-top: -3px;
     cursor: pointer;
     color: <?php echo $GLOBALS['cfg']['ThColor']; ?> !important;
 }
 
-#resultsForm.ajax button.mult_submit:hover {    
+form.ajax button.mult_submit:hover {    
     color: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
+}
+
+#fieldset_user_global_rights fieldset div.item {
+    margin: 0.8em 0;
+}
+
+#fieldset_user_global_rights fieldset div.item input[type=number] {
+    width: 60px;
+    float: right;
+    margin-top: -4px;
+}
+
+#fieldset_user_priv {
+    margin-bottom: 0.5em;
+}
+
+#fieldset_user_priv div.item,
+#fieldset_user_priv div.item i {
+    margin-right: 20px;
+}
+
+#fieldset_mode {
+    line-height: 2em;
+    margin: -1.5em 0;
+}
+
+#fieldset_add_user_login {
+    margin: -1em 0;
+}
+
+#fieldset_add_user_login div.item {
+    line-height: 36px;
+}
+
+#edit_user_dialog {
+    margin: 0 20px !important;
+}
+
+#li_switch_dbstats > strong {
+    font-weight: normal;
 }
