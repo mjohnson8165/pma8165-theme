@@ -3070,7 +3070,8 @@ div.group.pmagroup li a {
     color: #eee !important;
 }
 
-#pma_navigation_tree_content ul li.database li.table.selected a {
+#pma_navigation_tree_content ul li.database li.table.selected a,
+#pma_navigation_tree_content ul li.database.selected > a {
     color: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
 }
 
@@ -3162,13 +3163,12 @@ div.slide-wrapper #indexes {
     background: none !important;
 }
 
-// Remove button floating for certain forms
 .disableAjax.login .tblFooters {
     float: none !important;
 }
 
 #loginform #input_go {
-    margin-right: -1.5em;
+    margin-right: -1.5em !important;
     float: none !important;    
 }
 
@@ -3282,4 +3282,67 @@ form.ajax button.mult_submit:hover {
 
 #binlogTable code.sql {
     margin: -32px 0;
+}
+
+#boxContainer .operations_half_width {
+    width:28% !important;
+    margin: 0 2em 1em !important;
+    line-height: 2em;
+}
+
+#boxContainer .operations_full_width {
+    width: 100% !important;
+    overflow: hidden;
+}
+
+#boxContainer .operations_full_width .notice {
+    margin-top: 3em;
+}
+
+#boxContainer fieldset {
+    -moz-border-radius: 4px 4px 0 4px !important;
+    -webkit-border-radius: 4px 4px 0 4px !important;
+    border-radius: 4px 4px 0 4px !important;    
+}
+
+#boxContainer form fieldset.tblFooters {
+    float: none !important;
+    padding: 0;
+    margin: -15px 0 0;
+}
+
+#boxContainer form fieldset.tblFooters input {
+    float: none;
+    margin-right: 0;
+    -moz-border-radius: 0 0 4px 4px !important;
+    -webkit-border-radius: 0 0 4px 4px !important;
+    border-radius: 0 0 4px 4px !important;
+    padding: 3px 15px;
+}
+
+#boxContainer form fieldset .formelement input[type=text],
+#boxContainer form fieldset .formelement input[type=number] {
+    width: 30%;
+}
+
+#boxContainer form fieldset input[type=text],
+#boxContainer form fieldset input[type=number] {
+    width: 95%;
+}
+
+#boxContainer form fieldset select {
+    width: 98%;
+}
+
+#boxContainer form fieldset .formelement {
+    text-align: right;
+    width: 100%;
+}
+
+form#copy_db_form {
+    line-height: 2.3em;
+}
+
+form#copy_db_form .tblFooters {
+    margin-top: -18px !important;
 }
