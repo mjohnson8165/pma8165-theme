@@ -37,6 +37,7 @@ $GLOBALS['cfg']['NaviPointerBackground']    = 'rgba(255,255,255,0.05)';
 $GLOBALS['cfg']['HeaderBackground']         = '#222';
 $GLOBALS['cfg']['SuccessText']              = '#d4fb6a';
 $GLOBALS['cfg']['ControlColor']             = '#d64937';
+$GLOBALS['cfg']['PageBackground']           = '#1a1a1a';
 
 
 /**

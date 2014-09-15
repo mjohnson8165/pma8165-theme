@@ -3154,10 +3154,18 @@ table.ajax thead tr:hover th {
 }
 
 table.data thead a:hover,
-table.ajax thead a:hover {
+table.ajax thead a:hover,
+table#sticky_columns thead a:hover {
     color: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
 }
 
 .sort_arrow {    
     margin-top: -3px !important;    
+}
+
+#sticky_columns {
+    background: <?php echo $GLOBALS['cfg']['PageBackground']; ?> !important;
+    margin-left: 19px !important;
+    top: 105px !important;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
 }

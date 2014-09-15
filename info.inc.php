@@ -15,7 +15,6 @@
 // Thorough TODO list //
 ////////////////////////
 
-// FIXME: Remove hover effect on the first row (thead) of the structure table
 // TODO: Make the selection buttons look like ones and style both inactive and hover states
 // FIXME: Display the fieldset legend in the Options section of the Search section
 // TODO: Align the H3 and Go button in the Export section properly and style the H3 differently
