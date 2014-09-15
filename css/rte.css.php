@@ -20,17 +20,18 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 
 .rte_table td {
     vertical-align: middle;
-    padding: 0.2em;
+    padding: .5em;
+    text-align: left !important;
 }
 
 .rte_table tr td:nth-child(1) {
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .rte_table input,
 .rte_table select,
 .rte_table textarea {
-    width: 100%;
+    width: auto;
     margin: 0;
     box-sizing: border-box;
     -ms-box-sizing: border-box;

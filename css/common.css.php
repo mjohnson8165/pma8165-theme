@@ -3200,3 +3200,13 @@ table#sticky_columns thead a:hover {
     top: 105px !important;
     border-bottom: 2px solid rgba(0,0,0,0.2);
 }
+
+#resultsForm.ajax button.mult_submit {
+    margin-top: -3px;
+    cursor: pointer;
+    color: <?php echo $GLOBALS['cfg']['ThColor']; ?> !important;
+}
+
+#resultsForm.ajax button.mult_submit:hover {    
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
+}

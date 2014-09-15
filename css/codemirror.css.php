@@ -31,7 +31,7 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 
 .CodeMirror-gutters {
   border-right: 1px solid #222;
-  background-color: #151515;
+  background-color: rgba(0,0,0,0.1);
   white-space: nowrap;
   -webkit-border-top-left-radius: 8px;
   -webkit-border-bottom-left-radius: 8px;
