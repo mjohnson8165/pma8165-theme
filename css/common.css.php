@@ -336,9 +336,9 @@ button {
 table caption,
 table th,
 table td {
-    padding: 0.5em 1em;
+    padding: 0.7em 0.22em;
     margin: .1em;
-    vertical-align: top;
+    vertical-align: middle;
     text-shadow: 0 1px 0 rgba(0,0,0,0.3);
 }
 
