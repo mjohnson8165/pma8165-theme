@@ -2743,11 +2743,42 @@ fieldset .disabled-field td {
 
 .navigation {
     display: inline-block;
-    margin: .8em 0;
+    display: block;
+    margin: .8em 0 !important;
 
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
+}
+
+.navigation td.navigation_separator {
+    display: none;
+}
+
+.navigation input[type=submit] {
+    background: none !important;
+}
+
+.navigation input[type=submit].ajax {
+    display: inline-block;
+    text-indent: -9999px;
+    min-width: 16px;
+    max-width: 16px;
+}
+.navigation input[type=submit][value=">"].ajax {
+    background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('nav_delimiter.png');?>) no-repeat 50% 50% !important;  
+}
+
+.navigation input[type=submit][value="<"].ajax {
+    background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('nav_delimiter_cc.png');?>) no-repeat 50% 50% !important;  
+}
+
+.navigation input[type=submit][value=">>"].ajax {
+    background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('nav_delimiter_end.png');?>) no-repeat 50% 50% !important;  
+}
+
+.navigation input[type=submit][value="<<"].ajax {
+    background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('nav_delimiter_cc_end.png');?>) no-repeat 50% 50% !important;  
 }
 
 #sqlqueryresults>form[action="sql.php"] {display:none}
