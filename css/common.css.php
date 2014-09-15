@@ -565,8 +565,8 @@ th.condition {
 }
 
 td.condition {
-    border-width: 0 1px 0 1px;
-    border-style: solid;
+    border:none;
+    color: <?php echo $GLOBALS['cfg']['SuccessText']; ?>;
 }
 
 tr:last-child td.condition {
@@ -760,7 +760,7 @@ fieldset.confirmation legend {
 .tblcomment {
     font-size: 70%;
     font-weight: normal;
-    color: #000099;
+    color: <?php echo $GLOBALS['cfg']['NaviColor']; ?>;
 }
 
 .tblHeaders {
@@ -3075,6 +3075,10 @@ div.group.pmagroup li a {
 
 #pma_navigation_tree_content ul li.database:hover > a {
     color: #eee !important;
+}
+
+#pma_navigation_tree_content ul li.database li.table.selected a {
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
 }
 
 #inline_editor_outer input[type=button], 
