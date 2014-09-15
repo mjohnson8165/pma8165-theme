@@ -67,6 +67,7 @@ input,
 select,
 textarea {
     font-size: 1em;
+    font-family: <?php echo $GLOBALS['cfg']['FontFamily']; ?> !important;
 }
 
 
@@ -302,9 +303,9 @@ textarea.char {
 
 fieldset {
     margin: 1em 0;
-    border-radius: 4px 4px 0 0;
-    -moz-border-radius: 4px 4px 0 0;
-    -webkit-border-radius: 4px 4px 0 0;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
     border: 1px solid rgba(255,255,255,0.1);
     padding: .5em 1.5em 1em;    
     text-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
@@ -1128,6 +1129,10 @@ div#tablestatistics table {
     margin: 0 5px;
 }
 
+#serverinfo .item:hover {
+    color: rgba(255,255,255,0.9);
+}
+
 #goto_pagetop {
     position: fixed;
     padding: .25em .25em .2em;
@@ -1551,7 +1556,7 @@ div#profilingchart {
 /* table charting */
 
 #resizer {
-    border: 1px solid silver;
+    border: none;
 }
 #inner-resizer { /* make room for the resize handle */
     padding: 10px;
@@ -1923,7 +1928,8 @@ input[type=password].invalid_value,
 input[type=number].invalid_value,
 input[type=date].invalid_value,
 .invalid_value {
-    background: #FFCCCC;
+    background: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
+    color: #fff;
 }
 
 /**
@@ -3018,8 +3024,47 @@ div.group.pmagroup li a {
     margin-left: 50%;
 }
 
+/* PMA Recent tables and favorite tables */
 #pma_quick_warp {
-    display: none;
+    position: absolute;
+    left: -10px;
+    right: 0;
+    bottom: 20px;
+    z-index: 999;
+    background: rgba(21,21,21,0.9);
+}
+
+#pma_quick_warp .drop_list > span {
+    display: block;      
+    padding: .5em 1em;  
+    background: rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+#pma_quick_warp .drop_list ul {
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+    height: 1px;
+    overflow: hidden;
+    margin-top: -8px;
+    padding: 12px;
+    -webkit-transition: all 3s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+#pma_quick_warp .drop_list:hover span + ul {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+    height: 105px;    
+}
+
+.drop_list ul li:hover a {
+    color: #fff !important;
 }
 
 #navipanellinks {
@@ -3224,7 +3269,7 @@ form.ajax button.mult_submit:hover {
 }
 
 #fieldset_user_global_rights fieldset div.item {
-    margin: 0.8em 0;
+    margin: 1em 0;
 }
 
 #fieldset_user_global_rights fieldset div.item input[type=number] {
@@ -3373,4 +3418,47 @@ form#copy_db_form .tblFooters {
 .importoptions .formelementrow {
     margin-left: 40px;
     line-height: 2em;
+}
+
+#tblchartform div label {
+    margin-right: .6em !important;
+}
+
+/* Fixing the Insert section */
+
+#insertForm table.insertRowTable {
+    margin-top: 1em;
+}
+
+#insertForm table.insertRowTable td {
+    background: #151515 !important;
+    line-height: 2.8em;
+}
+
+#insertForm table.insertRowTable tfoot input {
+    float:right;
+    margin-top: -12px;
+    margin-right: -12px;
+    border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    padding: 4px 14px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.7) inset;
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.7) inset;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.7) inset;
+    border: none;
+}
+
+#insertForm table.insertRowTable td textarea {
+    width:95%;
+    margin-left: 5px;
+    height: 5em !important;
+}
+
+#pma_favorite_list li.warp_link:hover {
+    color: inherit;
+}
+
+#table_columns td {
+    line-height: 3em;
 }

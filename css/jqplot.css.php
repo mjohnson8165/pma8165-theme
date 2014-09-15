@@ -19,8 +19,8 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 /*rules for the plot target div.  These will be cascaded down to all plot elements according to css rules*/
 .jqplot-target {
     position: relative;
-    color: #222222;
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #eee;
+    font-family: <?php echo $GLOBALS['cfg']['FontFamily']; ?>;
     font-size: 1em;
 /*    height: 300px;
     width: 590px;*/    
