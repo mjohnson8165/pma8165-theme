@@ -3351,3 +3351,7 @@ form#copy_db_form {
 form#copy_db_form .tblFooters {
     margin-top: -18px !important;
 }
+
+#db_search_form.ajax table.formlayout td {
+    line-height: 2.5em;
+}
