@@ -1827,18 +1827,18 @@ div.sqlvalidate {
     padding-bottom: 1em;    
 }
 
-.group h2 {
-    background-color: #252525;
+.group h2, .ui-dialog-titlebar {
+    background: #252525 !important;
     padding: .5em .5em;
     margin-top: 0;
-    color: #999;
-    font-size: 1.2em;
-    font-weight: normal;
-    text-shadow: 0 1px 1px #000;
+    color: #999 !important;
+    font-size: 1.2em !important;
+    font-weight: normal !important;
+    text-shadow: 0 1px 1px #000 !important;
     -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 50px #191919 inset;
     -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 50px #191919 inset;
     box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 50px #191919 inset;
-    border-bottom: 1px solid rgba(0,0,0,0.4);
+    border-bottom: 1px solid rgba(0,0,0,0.4) !important;
 }
 
 .group-cnt {
@@ -2480,8 +2480,8 @@ fieldset .disabled-field td {
     line-height: 1.4em;
     height: 1.55em;
     overflow: hidden;
-    border-right: .1em solid #888;
-    border-left: .1em solid #888;
+    border-right: .1em solid #222;
+    border-left: .1em solid #222;
     -webkit-border-radius: .3em;
     -moz-border-radius: .3em;
     border-radius: .3em;
@@ -2888,14 +2888,19 @@ fieldset .disabled-field td {
 
 /* css for timepicker */
 .ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
-.ui-timepicker-div dl { text-align: <?php echo $left; ?>; }
+.ui-timepicker-div dl { text-align: <?php echo $left; ?>; font-size: 9px}
 .ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
-.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px}
 .ui-timepicker-div td { font-size: 90%; }
 .ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
 .ui-timepicker-rtl { direction: rtl; }
 .ui-timepicker-rtl dl { text-align: right; }
 .ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
+
+.ui-datepicker-trigger {
+    margin-top: -3px;
+    margin-left: 8px;
+}
 
 input.btn {
     color: #333;
