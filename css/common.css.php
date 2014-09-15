@@ -305,7 +305,7 @@ fieldset {
     -moz-border-radius: 4px 4px 0 0;
     -webkit-border-radius: 4px 4px 0 0;
     border: 1px solid rgba(255,255,255,0.1);
-    padding: 1.5em;    
+    padding: .5em 1.5em 1em;    
     text-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
     background: rgba(0,0,0,0.1);
 }
@@ -596,11 +596,11 @@ table [class=value] {
 }
 <?php } ?>
 .attention {
-    color: red;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
     font-weight: bold;
 }
 .allfine {
-    color: green;
+    color: <?php echo $GLOBALS['cfg']['SuccessText']; ?>;
 }
 
 
@@ -650,7 +650,11 @@ td .icon {
 
 /* message boxes: error, confirmation */
 #pma_errors, #pma_demo {
-    margin: 0 20px;
+    margin: 0;
+}
+
+#pma_errors div.error {
+    margin: 0 20px !important;
 }
 
 .success h1,
@@ -666,6 +670,7 @@ div.success,
 div.notice,
 div.error {
     margin: .5em 0 1.3em;
+    margin: 1.5em 0;
     border: 1px solid;
     background-repeat: no-repeat;
         <?php if ($GLOBALS['text_dir'] === 'ltr') { ?>
@@ -938,7 +943,12 @@ ul#topmenu2 a {
     white-space: nowrap;
     border: 1px solid transparent;    
     background: none;
+    color: <?php echo $GLOBALS['cfg']['NaviColor']; ?>;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
 
+ul#topmenu2 a:hover {
+    color: #eee;
 }
 
 fieldset.caution a:first-child {
@@ -1237,12 +1247,6 @@ div#tablestatistics table {
 
 
 /* serverstatus */
-
-.linkElem:hover {
-    text-decoration: underline;
-    color: #235a81;
-    cursor: pointer;
-}
 
 h3#serverstatusqueries span {
     font-size: 60%;
@@ -2962,6 +2966,7 @@ fieldset.tblFooters {
 fieldset.tblFooters input[type=submit] {
     float: right;
     margin-top: -60px;
+    margin-top: -66px;
 }
 
 #fieldset_table_qbe table tr.noclick td,
@@ -3167,6 +3172,7 @@ div.slide-wrapper #indexes {
     float: none !important;    
 }
 
+table.data tr th.right,
 table.data thead tr:hover td,
 table.data tfoot tr:hover td,
 table.ajax thead tr:hover td,
@@ -3178,6 +3184,13 @@ table.ajax tfoot tr:hover th {
     background: none !important;
     color: <?php echo $GLOBALS['cfg']['ThColor']; ?> !important;
     text-shadow: inherit !important;
+}
+
+table.data tr th.right {
+    padding: 2em .5em 1em;
+    color: #fff;
+    text-align:center;
+    font-weight: bold;
 }
 
 table.data thead a:hover,
@@ -3197,12 +3210,13 @@ table#sticky_columns thead a:hover {
     border-bottom: 2px solid rgba(0,0,0,0.2);
 }
 
+form#usersForm button.mult_submit,
 form.ajax button.mult_submit {
     margin-top: -3px;
     cursor: pointer;
     color: <?php echo $GLOBALS['cfg']['ThColor']; ?> !important;
 }
-
+form#usersForm button.mult_submit:hover,
 form.ajax button.mult_submit:hover {    
     color: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
 }
@@ -3239,10 +3253,33 @@ form.ajax button.mult_submit:hover {
     line-height: 36px;
 }
 
+#add_user_dialog,
 #edit_user_dialog {
     margin: 0 20px !important;
 }
 
 #li_switch_dbstats > strong {
     font-weight: normal;
+}
+
+#fieldset_add_user_database {
+    padding: 0 1.5em 1em;
+    line-height: 2em;
+}
+
+#replication {
+    margin-bottom: 1em;
+}
+
+#fieldset_add_user_login pre {
+    margin: .5em 0;
+    color: <?php echo $GLOBALS['cfg']['SuccessText']; ?>;
+}
+
+#confslave_submit {
+    margin-top: -40px;
+}
+
+#binlogTable code.sql {
+    margin: -32px 0;
 }

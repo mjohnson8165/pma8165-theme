@@ -4,7 +4,20 @@
 * To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Open%20Sans%2Csans-serif&fwDefault=normal&fsDefault=1.1em&cornerRadius=4px&bgColorHeader=%23222&bgTextureHeader=highlight_soft&bgImgOpacityHeader=10&borderColorHeader=%231a1a1a&fcHeader=%23ccc&iconColorHeader=%23eee&bgColorContent=%23191919&bgTextureContent=flat&bgImgOpacityContent=75&borderColorContent=%231a1a1a&fcContent=%23ccc&iconColorContent=%23ccc&bgColorDefault=%23d64937&bgTextureDefault=highlight_soft&bgImgOpacityDefault=10&borderColorDefault=%23d64937&fcDefault=%23fff&iconColorDefault=%23fff&bgColorHover=%23555&bgTextureHover=highlight_soft&bgImgOpacityHover=20&borderColorHover=%23444&fcHover=%23eee&iconColorHover=%23eee&bgColorActive=%23333&bgTextureActive=highlight_soft&bgImgOpacityActive=10&borderColorActive=%23444&fcActive=%23fff&iconColorActive=%23fff&bgColorHighlight=%231a1a1a&bgTextureHighlight=flat&bgImgOpacityHighlight=0&borderColorHighlight=%23191919&fcHighlight=%23eee&iconColorHighlight=%23eee&bgColorError=%23d64937&bgTextureError=flat&bgImgOpacityError=0&borderColorError=%23d64937&fcError=%23fff&iconColorError=%23fff&bgColorOverlay=%23000&bgTextureOverlay=flat&bgImgOpacityOverlay=50&opacityOverlay=30&bgColorShadow=%23000&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
 * Copyright 2014 jQuery Foundation and other contributors; Licensed MIT */
 
+/* Import Open Sans font */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+
+/* Force SQL Query window custom styling */
+html, html.chrome,
+#bodyquerywindow {
+    background: #1a1a1a !important;
+}
+
+#querywindowcontainer #button_submit_query {
+	float: none;
+	margin-top: 0;	
+}
 
 /* Layout helpers
 ----------------------------------*/
