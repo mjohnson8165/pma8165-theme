@@ -14,6 +14,7 @@
  * @subpackage PMA8165
  */
 
+
 /**
  * navi frame
  */
@@ -68,7 +69,7 @@ $GLOBALS['cfg']['BrowseMarkerBackground']   = '#fc9';
  * if not set the browser default will be used
  * (depending on browser, DTD and system settings)
  */
-$GLOBALS['cfg']['FontFamily']           = '"open sans", sans-serif';
+$GLOBALS['cfg']['FontFamily']           = '"Open Sans", sans-serif';
 /**
  * fixed width font family, used in textarea
  */
