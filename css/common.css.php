@@ -152,10 +152,14 @@ a:active {
     color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
     cursor: pointer;
     outline: none;
-
+    -webkit-transition: all .15s ease;
+    -moz-transition: all .15s ease;
+    -ms-transition: all .15s ease;
+    -o-transition: all .15s ease;
+    transition: all .15s ease;
 }
 
-a:hover {    
+a:hover {
     color: #fff;
 }
 
@@ -210,10 +214,12 @@ a img {
 }
 
 hr {
-    color: <?php echo $GLOBALS['cfg']['MainColor']; ?>;
-    background-color: <?php echo $GLOBALS['cfg']['MainColor']; ?>;
-    border: 0;
+    color: #333;
+    background-color: #333;
+    border: none;
+    border-bottom: 1px solid #111;
     height: 1px;
+    margin: 1em 0;
 }
 
 form {
@@ -824,6 +830,17 @@ td.disabled {
     color: #555;
 }
 
+.pma_table tr td,
+.pma_table tr th,
+.data tr td,
+.data tr th {
+    -webkit-transition: all .1s ease;
+    -moz-transition: all .1s ease;
+    -ms-transition: all .1s ease;
+    -o-transition: all .1s ease;
+    transition: all .1s ease;    
+}
+
 .pma_table tr:hover td,
 .pma_table tr:hover th,
 .data tr:hover td,
@@ -1409,12 +1426,7 @@ div#queryAnalyzerDialog table.queryNums {
     text-overflow: ellipsis;
     line-height: 2em;
 }
-#serverVariables .var-header {
-    color: <?php echo $GLOBALS['cfg']['ThColor']; ?>;
-    background: #f3f3f3;
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('ffffff', 'cccccc'); ?>
-    font-weight: bold;
-}
+
 #serverVariables .var-header .var-value {
     text-align: <?php echo $left; ?>;
 }
@@ -1424,8 +1436,7 @@ div#queryAnalyzerDialog table.queryNums {
 }
 #serverVariables .var-name {
     width: 45%;
-    float: <?php echo $left; ?>;
-    font-weight: bold;
+    float: <?php echo $left; ?>;    
 }
 #serverVariables .var-name.session {
     font-weight: normal;
@@ -1447,6 +1458,7 @@ div#queryAnalyzerDialog table.queryNums {
     float: <?php echo $left; ?>;
     font-family: sans-serif;
 }
+#serverVariables .editLink span.nowrap {float: left}
 #serverVariables .serverVariableEditor {
     width: 100%;
     overflow: hidden;
@@ -1846,10 +1858,25 @@ div.sqlvalidate {
 }
 
 .group-cnt {
-    padding: 0;
-    padding-<?php echo $left; ?>: .5em;
+    padding: 20px 20px 5px 20px;    
     display: inline-block;
     width: 98%;
+}
+
+.group-cnt div {
+    line-height: 2.5em;
+}
+
+.group-cnt div.notice {
+    line-height: 1.5em;
+}
+.group-cnt input[type=submit] {
+    margin-left: 0px;
+}
+
+.group-cnt div.notice {
+    margin-left: -25px;
+    margin-right: 20px;
 }
 
 textarea#partitiondefinition {
@@ -2233,8 +2260,8 @@ table#index_columns select {
     margin: .1em .2em 0;
     white-space: nowrap;
     text-decoration: none;
-    border: 1px solid <?php echo $GLOBALS['cfg']['BgTwo']; ?>;
-    border-bottom: 1px solid #aaa;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid #151515;
 }
 
 .config-form ul.tabs li a {
@@ -2242,23 +2269,22 @@ table#index_columns select {
     -webkit-border-radius: 5px 5px 0 0;
     -moz-border-radius: 5px 5px 0 0;
     border-radius: 5px 5px 0 0;
-    background: #f2f2f2;
-    color: #555;
-    text-shadow: 0 1px 0 #fff;
+    background: #151515;
+    color: #999;    
 }
 
 .config-form ul.tabs li a:hover,
 .config-form ul.tabs li a:active {
-    background: #e5e5e5;
+    color: #eee;
 }
 
 .config-form ul.tabs li.active a {
-    background-color: #fff;
+    background-color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
     margin-top: 1px;
-    color: #000;
-    text-shadow: none;
-    border-color: #aaa;
-    border-bottom: 1px solid #fff;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    border-color: transparent;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .config-form fieldset {
@@ -2277,7 +2303,7 @@ table#index_columns select {
 .config-form fieldset p {
     margin: 0;
     padding: .5em;
-    background: #fff;
+    background: #151515;
     border-top: 0;
 }
 
@@ -2297,15 +2323,14 @@ table#index_columns select {
     margin-<?php echo $left; ?>: 0;
     padding: 0;
     list-style: none;
-    color: #9A0000;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
     font-size: small;
 }
 
 .config-form fieldset th {
-    padding: .3em .3em .3em;
-    padding-<?php echo $left; ?>: .5em;
+    padding: 1em;
     text-align: <?php echo $left; ?>;
-    vertical-align: top;
+    vertical-align: middle;
     width: 40%;
     background: transparent;
     filter: none;
@@ -2326,21 +2351,22 @@ table#index_columns select {
 .config-form fieldset td {
     padding-top: .3em;
     padding-bottom: .3em;
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 .config-form fieldset th small {
     display: block;
     font-weight: normal;
     font-family: sans-serif;
-    font-size: x-small;
-    color: #444;
+    font-size: .9em;
+    color: rgba(255,255,255,0.2);
 }
 
 .config-form fieldset th,
 .config-form fieldset td {
     border-top: 1px <?php echo $GLOBALS['cfg']['BgTwo']; ?> solid;
     border-<?php echo $right; ?>: none;
+    line-height: 1.5em;
 }
 
 fieldset .group-header th {
@@ -2373,17 +2399,12 @@ fieldset .disabled-field td {
 }
 
 .config-form .lastrow {
-    border-top: 1px #000 solid;
+    border-top: 1px #111 solid;
 }
 
 .config-form .lastrow {
-    background: <?php echo $GLOBALS['cfg']['ThBackground']; ?>;
-    padding: .5em;
-    text-align: center;
-}
-
-.config-form .lastrow input {
-    font-weight: bold;
+    background: #131313;
+    padding: 1em .5em;    
 }
 
 /* form elements */
@@ -2394,17 +2415,17 @@ fieldset .disabled-field td {
 }
 
 .config-form .custom { /* customized field */
-    background: #FFC;
+    background: rgba(255,255,255,0.05);
 }
 
 .config-form span.checkbox.custom {
     padding: 1px;
-    border: 1px #EDEC90 solid;
-    background: #FFC;
+    border: 1px rgba(255,255,255,0.05) solid;
+    background: rgba(255,255,255,0.05);
 }
 
 .config-form .field-error {
-    border-color: #A11 !important;
+    border-color: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
 }
 
 .config-form input[type="text"],
@@ -2412,22 +2433,13 @@ fieldset .disabled-field td {
 .config-form input[type="number"],
 .config-form select,
 .config-form textarea {
-    border: 1px #A7A6AA solid;
     height: auto;
 }
 
-.config-form input[type="text"]:focus,
-.config-form input[type="password"]:focus,
-.config-form input[type="number"]:focus,
-.config-form select:focus,
-.config-form textarea:focus {
-    border: 1px #6676FF solid;
-    background: #F7FBFF;
-}
 
 .config-form .field-comment-mark {
     font-family: serif;
-    color: #007;
+    color: #ccc;
     cursor: help;
     padding: 0 .2em;
     font-weight: bold;
@@ -2435,7 +2447,7 @@ fieldset .disabled-field td {
 }
 
 .config-form .field-comment-warning {
-    color: #A00;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
 }
 
 /* error list */
@@ -2678,14 +2690,14 @@ fieldset .disabled-field td {
     cursor: pointer;
     height: 16px;
     margin-<?php echo $left; ?>: .3em;
-    margin-top: .3em;
+    margin-top: 1em;
     position: absolute;
     width: 16px;
 }
 
 .coldrop:hover,
 .coldrop-hover {
-    background-color: #999;
+    background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('col_drop_white.png');?>);
 }
 
 .cList {
@@ -2947,6 +2959,8 @@ body .ui-widget {
 
 /* Display SOME icons */
 .icon.ic_s_top,
+.icon.ic_s_db,
+.icon.ic_b_newdb,
 .icon.ic_b_plus,
 .icon.ic_b_minus,
 .menucontainer .icon,
@@ -3035,6 +3049,7 @@ div.group.pmagroup li a {
 }
 
 #pma_quick_warp .drop_list > span {
+    color: #333;
     display: block;      
     padding: .5em 1em;  
     background: rgba(0,0,0,0.1);
@@ -3049,11 +3064,15 @@ div.group.pmagroup li a {
     overflow: hidden;
     margin-top: -8px;
     padding: 12px;
-    -webkit-transition: all 3s ease;
+    -webkit-transition: all .2s ease;
     -moz-transition: all .2s ease;
     -ms-transition: all .2s ease;
     -o-transition: all .2s ease;
     transition: all .2s ease;
+}
+
+#pma_quick_warp .drop_list:hover span {
+    color: #999;
 }
 
 #pma_quick_warp .drop_list:hover span + ul {
@@ -3061,6 +3080,10 @@ div.group.pmagroup li a {
     -moz-opacity: 1;
     opacity: 1;
     height: 105px;    
+}
+
+.drop_list ul li a {
+    color: #555 !important;
 }
 
 .drop_list ul li:hover a {
@@ -3082,10 +3105,19 @@ div.group.pmagroup li a {
 #pma_navigation_tree li > i {
     color: <?php echo $GLOBALS['cfg']['NaviColor']; ?>;
 }
+#pma_navigation_tree li.table a.hover_show_full {
+    margin-left: -20px;
+}
 
-#pma_navigation_tree li.new_table a.hover_show_full {        
-    line-height:32px;
-    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
+#pma_navigation_tree li.new_table a.hover_show_full,
+#pma_navigation_tree li.new_database a.hover_show_full {
+    line-height: 29px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+#pma_navigation_tree li.new_database a.hover_show_full {
+    line-height: 22px;
 }
 
 #pma_navigation_tree li.new_table a.hover_show_full:hover {
@@ -3134,7 +3166,7 @@ input[type="radio"] {
     display:inline-block;
     width:16px;
     height:16px;
-    margin:-1px 4px 0 0;
+    margin: 2px;
     vertical-align:middle;
     cursor:pointer;
 }
@@ -3238,6 +3270,18 @@ table.data tr th.right {
     color: #fff;
     text-align:center;
     font-weight: bold;
+}
+
+/* Fix favorites icon on hover */
+tr:hover td a.favorite_table_anchor img {
+    display: none;
+}
+
+tr:hover td a.favorite_table_anchor span {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('b_favorite_white.png');?>) no-repeat 50% 50%;
 }
 
 table.data thead a:hover,
@@ -3461,4 +3505,18 @@ form#copy_db_form .tblFooters {
 
 #table_columns td {
     line-height: 3em;
+}
+
+#formQBE {
+    display:none;
+}
+
+form div.floatleft textarea {
+    width: 99.5%;
+    margin-bottom: 40px;
+}
+
+form div.floatleft .tblFooters,
+form div.floatleft {
+    float: none;
 }

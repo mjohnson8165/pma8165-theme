@@ -45,10 +45,6 @@ ul.resizable-menu ul {
     border-radius: 4px;
 }
 
-ul.resizable-menu li:hover {
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient($GLOBALS['cfg']['ControlColor'], 'ff533d'); ?>
-}
-
 ul.resizable-menu li:hover ul,
 ul.resizable-menu .submenuhover ul {
     display: block;
