@@ -2280,11 +2280,12 @@ table#index_columns select {
 
 .config-form ul.tabs li.active a {
     background-color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
-    margin-top: 1px;
+    margin-top: 2px;
     color: #fff;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-    border-color: transparent;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border: none;
+    padding: 7px 11px;
+    box-shadow: 0 -1px 2px rgba(0,0,0,0.5) inset;
 }
 
 .config-form fieldset {
@@ -3107,6 +3108,11 @@ div.group.pmagroup li a {
 }
 #pma_navigation_tree li.table a.hover_show_full {
     margin-left: -20px;
+}
+
+/* Fix for PMA 4.0.x */
+#pma_navigation_tree li.table > a {
+    margin-left: -16px;
 }
 
 #pma_navigation_tree li.new_table a.hover_show_full,
