@@ -1,8 +1,7 @@
 <?php
 /* vim: set expandtab sw=4 ts=4 sts=4: */
 /**
- * Common styles for the pma8165 theme
- * orange: <?php echo $GLOBALS['cfg']['ControlColor']; ?>
+ * Common styles for the pma8165 theme 
  *
  * @package    PhpMyAdmin-theme
  * @subpackage PMA8165
@@ -14,7 +13,6 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 }
 ?>
 /******************************************************************************/
-
 
 /* CSS Reset */
 
@@ -69,6 +67,7 @@ input,
 select,
 textarea {
     font-size: 1em;
+    font-family: <?php echo $GLOBALS['cfg']['FontFamily']; ?> !important;
 }
 
 
@@ -88,7 +87,7 @@ body#loginform {
 }
 
 #page_content {    
-    padding: 0 12px;
+    padding: 0 12px 20px;
     margin: 0 .5em;
 }
 
@@ -141,7 +140,8 @@ h2 a img {
 }
 
 h3 {
-    font-weight: bold;
+    font-weight: normal;
+    font-size: 2em !important;
 }
 
 a,
@@ -152,10 +152,14 @@ a:active {
     color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
     cursor: pointer;
     outline: none;
-
+    -webkit-transition: all .15s ease;
+    -moz-transition: all .15s ease;
+    -ms-transition: all .15s ease;
+    -o-transition: all .15s ease;
+    transition: all .15s ease;
 }
 
-a:hover {    
+a:hover {
     color: #fff;
 }
 
@@ -210,10 +214,12 @@ a img {
 }
 
 hr {
-    color: <?php echo $GLOBALS['cfg']['MainColor']; ?>;
-    background-color: <?php echo $GLOBALS['cfg']['MainColor']; ?>;
-    border: 0;
+    color: #333;
+    background-color: #333;
+    border: none;
+    border-bottom: 1px solid #111;
     height: 1px;
+    margin: 1em 0;
 }
 
 form {
@@ -302,17 +308,14 @@ textarea.char {
 }
 
 fieldset {
-    margin-top: 1em;
-    border-radius: 4px 4px 0 0;
-    -moz-border-radius: 4px 4px 0 0;
-    -webkit-border-radius: 4px 4px 0 0;
+    margin: 1em 0;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
     border: 1px solid rgba(255,255,255,0.1);
-    padding: 1.5em;
-    background: rgba(0,0,0,0.1);
+    padding: .5em 1.5em 1em;    
     text-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
-    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
-    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
-    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 2px #rgba(0,0,0,0.3) inset;
+    background: rgba(0,0,0,0.1);
 }
 
 fieldset fieldset {    
@@ -321,17 +324,8 @@ fieldset fieldset {
 }
 
 fieldset legend {
-    font-weight: bold;
     color: #ccc;
-    padding: 5px 10px;
-    border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border: 1px solid rgba(255,255,255,0.1);
-    background-color: #222;
-    -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>3px 3px 15px rgba(0,0,0,0.3);
-    -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>3px 3px 15px rgba(0,0,0,0.3);
-    box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>3px 3px 15px rgba(0,0,0,0.3);
+    padding: 5px 10px;   
     max-width: 100%;    
 }
 
@@ -348,9 +342,9 @@ button {
 table caption,
 table th,
 table td {
-    padding: 0.5em 1em;
+    padding: 0.7em 0.22em;
     margin: .1em;
-    vertical-align: top;
+    vertical-align: middle;
     text-shadow: 0 1px 0 rgba(0,0,0,0.3);
 }
 
@@ -554,24 +548,6 @@ table tr.marked td:first-child {
 table tr.marked a {color: <?php echo $GLOBALS['cfg']['BrowseMarkerColor']; ?>; }
 <?php } ?>
 
-<?php if ($GLOBALS['cfg']['BrowsePointerEnable']) { ?>
-/* hovered items */
-.odd:hover,
-.even:hover,
-.hover {
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('eee', 'e5e5e5'); ?>
-    color: <?php echo $GLOBALS['cfg']['BrowsePointerColor']; ?>;    
-}
-
-/* hovered table rows */
-table tr.odd:hover th,
-table tr.even:hover th,
-table tr.hover th {
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('ced6df', 'b6c6d7'); ?>
-    color: <?php echo $GLOBALS['cfg']['BrowsePointerColor']; ?>;    
-}
-<?php } ?>
-
 /**
  * marks table rows/cells if the db field is in a where condition
  */
@@ -585,8 +561,8 @@ th.condition {
 }
 
 td.condition {
-    border-width: 0 1px 0 1px;
-    border-style: solid;
+    border:none;
+    color: <?php echo $GLOBALS['cfg']['SuccessText']; ?>;
 }
 
 tr:last-child td.condition {
@@ -628,11 +604,11 @@ table [class=value] {
 }
 <?php } ?>
 .attention {
-    color: red;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
     font-weight: bold;
 }
 .allfine {
-    color: green;
+    color: <?php echo $GLOBALS['cfg']['SuccessText']; ?>;
 }
 
 
@@ -682,7 +658,11 @@ td .icon {
 
 /* message boxes: error, confirmation */
 #pma_errors, #pma_demo {
-    padding: 0 20px;
+    margin: 0;
+}
+
+#pma_errors div.error {
+    margin: 0 20px !important;
 }
 
 .success h1,
@@ -698,6 +678,7 @@ div.success,
 div.notice,
 div.error {
     margin: .5em 0 1.3em;
+    margin: 1.5em 0;
     border: 1px solid;
     background-repeat: no-repeat;
         <?php if ($GLOBALS['text_dir'] === 'ltr') { ?>
@@ -780,7 +761,7 @@ fieldset.confirmation legend {
 .tblcomment {
     font-size: 70%;
     font-weight: normal;
-    color: #000099;
+    color: <?php echo $GLOBALS['cfg']['NaviColor']; ?>;
 }
 
 .tblHeaders {
@@ -847,6 +828,17 @@ tr.disabled td,
 td.disabled {
     background-color: transparent;
     color: #555;
+}
+
+.pma_table tr td,
+.pma_table tr th,
+.data tr td,
+.data tr th {
+    -webkit-transition: all .1s ease;
+    -moz-transition: all .1s ease;
+    -ms-transition: all .1s ease;
+    -o-transition: all .1s ease;
+    transition: all .1s ease;    
 }
 
 .pma_table tr:hover td,
@@ -970,7 +962,12 @@ ul#topmenu2 a {
     white-space: nowrap;
     border: 1px solid transparent;    
     background: none;
+    color: <?php echo $GLOBALS['cfg']['NaviColor']; ?>;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
 
+ul#topmenu2 a:hover {
+    color: #eee;
 }
 
 fieldset.caution a:first-child {
@@ -1048,9 +1045,7 @@ ul#topmenu .tabactive {
 }
 
 ul#topmenu2 a.tab:hover,
-ul#topmenu2 a.tabactive {
-    background-color: <?php echo $GLOBALS['cfg']['BgOne']; ?>;
-    border-color: rgba(255,255,255,0.1);
+ul#topmenu2 a.tabactive {    
     color: #fff;
     border-radius: 3px;
     -moz-border-radius: 3px;
@@ -1149,6 +1144,10 @@ div#tablestatistics table {
     white-space: nowrap;
     color: rgba(255,255,255,0.5);
     margin: 0 5px;
+}
+
+#serverinfo .item:hover {
+    color: rgba(255,255,255,0.9);
 }
 
 #goto_pagetop {
@@ -1269,12 +1268,6 @@ div#tablestatistics table {
 
 
 /* serverstatus */
-
-.linkElem:hover {
-    text-decoration: underline;
-    color: #235a81;
-    cursor: pointer;
-}
 
 h3#serverstatusqueries span {
     font-size: 60%;
@@ -1433,12 +1426,7 @@ div#queryAnalyzerDialog table.queryNums {
     text-overflow: ellipsis;
     line-height: 2em;
 }
-#serverVariables .var-header {
-    color: <?php echo $GLOBALS['cfg']['ThColor']; ?>;
-    background: #f3f3f3;
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('ffffff', 'cccccc'); ?>
-    font-weight: bold;
-}
+
 #serverVariables .var-header .var-value {
     text-align: <?php echo $left; ?>;
 }
@@ -1448,8 +1436,7 @@ div#queryAnalyzerDialog table.queryNums {
 }
 #serverVariables .var-name {
     width: 45%;
-    float: <?php echo $left; ?>;
-    font-weight: bold;
+    float: <?php echo $left; ?>;    
 }
 #serverVariables .var-name.session {
     font-weight: normal;
@@ -1471,6 +1458,7 @@ div#queryAnalyzerDialog table.queryNums {
     float: <?php echo $left; ?>;
     font-family: sans-serif;
 }
+#serverVariables .editLink span.nowrap {float: left}
 #serverVariables .serverVariableEditor {
     width: 100%;
     overflow: hidden;
@@ -1580,7 +1568,7 @@ div#profilingchart {
 /* table charting */
 
 #resizer {
-    border: 1px solid silver;
+    border: none;
 }
 #inner-resizer { /* make room for the resize handle */
     padding: 10px;
@@ -1855,25 +1843,40 @@ div.sqlvalidate {
     padding-bottom: 1em;    
 }
 
-.group h2 {
-    background-color: #252525;
+.group h2, .ui-dialog-titlebar {
+    background: #252525 !important;
     padding: .5em .5em;
     margin-top: 0;
-    color: #999;
-    font-size: 1.2em;
-    font-weight: normal;
-    text-shadow: 0 1px 1px #000;
+    color: #999 !important;
+    font-size: 1.2em !important;
+    font-weight: normal !important;
+    text-shadow: 0 1px 1px #000 !important;
     -moz-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 50px #191919 inset;
     -webkit-box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 50px #191919 inset;
     box-shadow: <?php echo $GLOBALS['text_dir'] === 'rtl' ? '-' : ''; ?>1px 1px 50px #191919 inset;
-    border-bottom: 1px solid rgba(0,0,0,0.4);
+    border-bottom: 1px solid rgba(0,0,0,0.4) !important;
 }
 
 .group-cnt {
-    padding: 0;
-    padding-<?php echo $left; ?>: .5em;
+    padding: 20px 20px 5px 20px;    
     display: inline-block;
     width: 98%;
+}
+
+.group-cnt div {
+    line-height: 2.5em;
+}
+
+.group-cnt div.notice {
+    line-height: 1.5em;
+}
+.group-cnt input[type=submit] {
+    margin-left: 0px;
+}
+
+.group-cnt div.notice {
+    margin-left: -25px;
+    margin-right: 20px;
 }
 
 textarea#partitiondefinition {
@@ -1952,7 +1955,8 @@ input[type=password].invalid_value,
 input[type=number].invalid_value,
 input[type=date].invalid_value,
 .invalid_value {
-    background: #FFCCCC;
+    background: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
+    color: #fff;
 }
 
 /**
@@ -2003,11 +2007,9 @@ input[type=date].invalid_value,
 
 .exportoptions h3,
 .importoptions h3 {
-    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
-    border-bottom: 1px dashed;
-    font-size: 110%;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;        
     padding-bottom: .3em;
-    margin-bottom: .7em;
+    margin-left: 5px;
 }
 
 .exportoptions ul,
@@ -2046,7 +2048,7 @@ input[type=date].invalid_value,
 .exportoptions #buttonGo,
 .importoptions #buttonGo {
     font-weight: bold;
-    margin-<?php echo $left; ?>: 14px;
+    margin-<?php echo $left; ?>: 3px;
     border: 1px solid #ff533d;
     padding: 5px 12px;
     color: #fff;
@@ -2258,8 +2260,8 @@ table#index_columns select {
     margin: .1em .2em 0;
     white-space: nowrap;
     text-decoration: none;
-    border: 1px solid <?php echo $GLOBALS['cfg']['BgTwo']; ?>;
-    border-bottom: 1px solid #aaa;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid #151515;
 }
 
 .config-form ul.tabs li a {
@@ -2267,23 +2269,23 @@ table#index_columns select {
     -webkit-border-radius: 5px 5px 0 0;
     -moz-border-radius: 5px 5px 0 0;
     border-radius: 5px 5px 0 0;
-    background: #f2f2f2;
-    color: #555;
-    text-shadow: 0 1px 0 #fff;
+    background: #151515;
+    color: #999;    
 }
 
 .config-form ul.tabs li a:hover,
 .config-form ul.tabs li a:active {
-    background: #e5e5e5;
+    color: #eee;
 }
 
 .config-form ul.tabs li.active a {
-    background-color: #fff;
-    margin-top: 1px;
-    color: #000;
-    text-shadow: none;
-    border-color: #aaa;
-    border-bottom: 1px solid #fff;
+    background-color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
+    margin-top: 2px;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    border: none;
+    padding: 7px 11px;
+    box-shadow: 0 -1px 2px rgba(0,0,0,0.5) inset;
 }
 
 .config-form fieldset {
@@ -2302,7 +2304,7 @@ table#index_columns select {
 .config-form fieldset p {
     margin: 0;
     padding: .5em;
-    background: #fff;
+    background: #151515;
     border-top: 0;
 }
 
@@ -2322,15 +2324,14 @@ table#index_columns select {
     margin-<?php echo $left; ?>: 0;
     padding: 0;
     list-style: none;
-    color: #9A0000;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
     font-size: small;
 }
 
 .config-form fieldset th {
-    padding: .3em .3em .3em;
-    padding-<?php echo $left; ?>: .5em;
+    padding: 1em;
     text-align: <?php echo $left; ?>;
-    vertical-align: top;
+    vertical-align: middle;
     width: 40%;
     background: transparent;
     filter: none;
@@ -2351,21 +2352,22 @@ table#index_columns select {
 .config-form fieldset td {
     padding-top: .3em;
     padding-bottom: .3em;
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 .config-form fieldset th small {
     display: block;
     font-weight: normal;
     font-family: sans-serif;
-    font-size: x-small;
-    color: #444;
+    font-size: .9em;
+    color: rgba(255,255,255,0.2);
 }
 
 .config-form fieldset th,
 .config-form fieldset td {
     border-top: 1px <?php echo $GLOBALS['cfg']['BgTwo']; ?> solid;
     border-<?php echo $right; ?>: none;
+    line-height: 1.5em;
 }
 
 fieldset .group-header th {
@@ -2398,17 +2400,12 @@ fieldset .disabled-field td {
 }
 
 .config-form .lastrow {
-    border-top: 1px #000 solid;
+    border-top: 1px #111 solid;
 }
 
 .config-form .lastrow {
-    background: <?php echo $GLOBALS['cfg']['ThBackground']; ?>;
-    padding: .5em;
-    text-align: center;
-}
-
-.config-form .lastrow input {
-    font-weight: bold;
+    background: #131313;
+    padding: 1em .5em;    
 }
 
 /* form elements */
@@ -2419,17 +2416,17 @@ fieldset .disabled-field td {
 }
 
 .config-form .custom { /* customized field */
-    background: #FFC;
+    background: rgba(255,255,255,0.05);
 }
 
 .config-form span.checkbox.custom {
     padding: 1px;
-    border: 1px #EDEC90 solid;
-    background: #FFC;
+    border: 1px rgba(255,255,255,0.05) solid;
+    background: rgba(255,255,255,0.05);
 }
 
 .config-form .field-error {
-    border-color: #A11 !important;
+    border-color: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
 }
 
 .config-form input[type="text"],
@@ -2437,22 +2434,13 @@ fieldset .disabled-field td {
 .config-form input[type="number"],
 .config-form select,
 .config-form textarea {
-    border: 1px #A7A6AA solid;
     height: auto;
 }
 
-.config-form input[type="text"]:focus,
-.config-form input[type="password"]:focus,
-.config-form input[type="number"]:focus,
-.config-form select:focus,
-.config-form textarea:focus {
-    border: 1px #6676FF solid;
-    background: #F7FBFF;
-}
 
 .config-form .field-comment-mark {
     font-family: serif;
-    color: #007;
+    color: #ccc;
     cursor: help;
     padding: 0 .2em;
     font-weight: bold;
@@ -2460,7 +2448,7 @@ fieldset .disabled-field td {
 }
 
 .config-form .field-comment-warning {
-    color: #A00;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
 }
 
 /* error list */
@@ -2508,8 +2496,8 @@ fieldset .disabled-field td {
     line-height: 1.4em;
     height: 1.55em;
     overflow: hidden;
-    border-right: .1em solid #888;
-    border-left: .1em solid #888;
+    border-right: .1em solid #222;
+    border-left: .1em solid #222;
     -webkit-border-radius: .3em;
     -moz-border-radius: .3em;
     border-radius: .3em;
@@ -2703,14 +2691,14 @@ fieldset .disabled-field td {
     cursor: pointer;
     height: 16px;
     margin-<?php echo $left; ?>: .3em;
-    margin-top: .3em;
+    margin-top: 1em;
     position: absolute;
     width: 16px;
 }
 
 .coldrop:hover,
 .coldrop-hover {
-    background-color: #999;
+    background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('col_drop_white.png');?>);
 }
 
 .cList {
@@ -2758,16 +2746,47 @@ fieldset .disabled-field td {
 }
 
 #page_content {
-    background-color: #1a1a1a;
+    background-color: <?php echo $GLOBALS['cfg']['PageBackground']; ?>;
 }
 
 .navigation {
     display: inline-block;
-    margin: .8em 0;
+    display: block;
+    margin: .8em 0 !important;
 
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
+}
+
+.navigation td.navigation_separator {
+    display: none;
+}
+
+.navigation input[type=submit] {
+    background: none !important;
+}
+
+.navigation input[type=submit].ajax {
+    display: inline-block;
+    text-indent: -9999px;
+    min-width: 16px;
+    max-width: 16px;
+}
+.navigation input[type=submit][value=">"].ajax {
+    background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('nav_delimiter.png');?>) no-repeat 50% 50% !important;  
+}
+
+.navigation input[type=submit][value="<"].ajax {
+    background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('nav_delimiter_cc.png');?>) no-repeat 50% 50% !important;  
+}
+
+.navigation input[type=submit][value=">>"].ajax {
+    background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('nav_delimiter_end.png');?>) no-repeat 50% 50% !important;  
+}
+
+.navigation input[type=submit][value="<<"].ajax {
+    background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('nav_delimiter_cc_end.png');?>) no-repeat 50% 50% !important;  
 }
 
 #sqlqueryresults>form[action="sql.php"] {display:none}
@@ -2885,14 +2904,19 @@ fieldset .disabled-field td {
 
 /* css for timepicker */
 .ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
-.ui-timepicker-div dl { text-align: <?php echo $left; ?>; }
+.ui-timepicker-div dl { text-align: <?php echo $left; ?>; font-size: 9px}
 .ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
-.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px}
 .ui-timepicker-div td { font-size: 90%; }
 .ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
 .ui-timepicker-rtl { direction: rtl; }
 .ui-timepicker-rtl dl { text-align: right; }
 .ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
+
+.ui-dialog-content .ui-datepicker-trigger {
+    margin-top: 4px;
+    margin-left: 8px;
+}
 
 input.btn {
     color: #333;
@@ -2931,8 +2955,17 @@ body .ui-widget {
     width:570px;
 }
 
+/* Hide ALL icons */
 .icon {display:none}
+
+/* Display SOME icons */
 .icon.ic_s_top,
+.icon.ic_s_db,
+.icon.ic_b_newdb,
+.icon.ic_b_plus,
+.icon.ic_b_minus,
+.menucontainer .icon,
+#navipanellinks .icon,
 .error .icon {
     display:inline-block;
 }
@@ -2942,14 +2975,8 @@ body .ui-widget {
 p a[target=print_view] {
     margin: 0 5px
 }
-fieldset legend {display:none}
-#sqlqueryresults.ajax fieldset {background: rgba(0,0,0,0.1)}
 
-thead > tr * {
-    background: none !important;
-    color: inherit !important;
-    text-shadow: inherit !important;
-}
+#sqlqueryresults.ajax fieldset {background: rgba(0,0,0,0.1)}
 
 fieldset.tblFooters {
     border: none;
@@ -2962,6 +2989,7 @@ fieldset.tblFooters {
 fieldset.tblFooters input[type=submit] {
     float: right;
     margin-top: -60px;
+    margin-top: -66px;
 }
 
 #fieldset_table_qbe table tr.noclick td,
@@ -3009,4 +3037,492 @@ div.group.pmagroup li a {
 
 #main_pane_right {
     margin-left: 50%;
+}
+
+/* PMA Recent tables and favorite tables */
+#pma_quick_warp {
+    position: absolute;
+    left: -10px;
+    right: 0;
+    bottom: 20px;
+    z-index: 999;
+    background: rgba(21,21,21,0.9);
+}
+
+#pma_quick_warp .drop_list > span {
+    color: #333;
+    display: block;      
+    padding: .5em 1em;  
+    background: rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+#pma_quick_warp .drop_list ul {
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+    height: 1px;
+    overflow: hidden;
+    margin-top: -8px;
+    padding: 12px;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+#pma_quick_warp .drop_list:hover span {
+    color: #999;
+}
+
+#pma_quick_warp .drop_list:hover span + ul {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+    height: 105px;    
+}
+
+.drop_list ul li a {
+    color: #555 !important;
+}
+
+.drop_list ul li:hover a {
+    color: #fff !important;
+}
+
+#navipanellinks {
+    text-align: center;
+    padding: 1em 0;
+}
+#navipanellinks a {
+    margin: 0 .35em;
+}
+
+#pma_navigation_tree div.block {
+    margin-top: 3px;
+}
+
+#pma_navigation_tree li > i {
+    color: <?php echo $GLOBALS['cfg']['NaviColor']; ?>;
+}
+#pma_navigation_tree li.table a.hover_show_full {
+    margin-left: -20px;
+}
+
+/* Fix for PMA 4.0.x */
+#pma_navigation_tree li.table > a {
+    margin-left: -16px;
+}
+
+#pma_navigation_tree li.new_table a.hover_show_full,
+#pma_navigation_tree li.new_database a.hover_show_full {
+    line-height: 29px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+#pma_navigation_tree li.new_database a.hover_show_full {
+    line-height: 22px;
+}
+
+#pma_navigation_tree li.new_table a.hover_show_full:hover {
+    color: #eee;
+}
+
+#pma_navigation_tree li.new_table {
+    margin-bottom: -8px;
+}
+
+#pma_navigation_tree div.block u {
+    margin-top: -6px;
+}
+
+#pma_navigation_tree div.block u icon.ic_b_plus, 
+#pma_navigation_tree div.block u icon.ic_b_minus {
+    margin-top: 5px;
+}
+
+.selectallarrow {
+    margin-top: -13px;
+}
+
+#pma_navigation_tree_content ul li.database.selected {
+    margin-bottom: -12px;
+}
+
+#pma_navigation_tree_content ul li.database:hover > a {
+    color: #eee !important;
+}
+
+#pma_navigation_tree_content ul li.database li.table.selected a,
+#pma_navigation_tree_content ul li.database.selected > a {
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
+}
+
+#inline_editor_outer input[type=button], 
+#inline_editor_outer input[type=submit] {
+    margin-bottom: 1em;
+}
+
+#sqlqueryresults.ajax br {display:none}
+
+input[type="checkbox"],
+input[type="radio"] {
+    display:inline-block;
+    width:16px;
+    height:16px;
+    margin: 2px;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+#tableuserrights.data span[style] {
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
+}
+
+#edit_user_dialog h2 {
+    margin: 1em 0;
+}
+
+#fieldset_add_user_login hr {
+    display: none;
+}
+
+#fieldset_add_user_login div.item {
+    border-bottom: none;
+}
+
+#actions_panel {
+    padding: 1em 0 0;
+    margin: 0 0 1em;    
+}
+
+#actions_panel table td.right.vmiddle {
+    position: absolute;
+    margin-top: -40px;
+    right: 40px;
+}
+
+#continueForm {
+    padding-bottom: 2em;
+}
+
+#serverinfo span.separator {
+    background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('nav_delimiter.png');?>) no-repeat 50% 100%;
+    display: inline-block;
+    text-indent: -9999px;
+    min-width: 16px;
+    max-width: 16px;
+}
+
+#structure-action-links a {
+    margin: 0 .5em;
+}
+
+#structure-action-links a img {
+    display: none;
+}
+
+#index_div {
+    margin: 1em 0;
+}
+
+#tablestatistics fieldset {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+#addColumns input[type=radio] {
+    margin-left: 1em;
+}
+
+div.slide-wrapper #indexes {
+    overflow: inherit !important;
+}
+
+#table_index tr:hover td,
+#table_index tr:hover th {
+    background: none !important;
+}
+
+.disableAjax.login .tblFooters {
+    float: none !important;
+}
+
+#loginform #input_go {
+    margin-right: -1.5em !important;
+    float: none !important;    
+}
+
+table.data tr th.right,
+table.data thead tr:hover td,
+table.data tfoot tr:hover td,
+table.ajax thead tr:hover td,
+table.ajax tfoot tr:hover td,
+table.data thead tr:hover th,
+table.data tfoot tr:hover th,
+table.ajax thead tr:hover th,
+table.ajax tfoot tr:hover th {
+    background: none !important;
+    color: <?php echo $GLOBALS['cfg']['ThColor']; ?> !important;
+    text-shadow: inherit !important;
+}
+
+table.data tr th.right {
+    padding: 2em .5em 1em;
+    color: #fff;
+    text-align:center;
+    font-weight: bold;
+}
+
+/* Fix favorites icon on hover */
+tr:hover td a.favorite_table_anchor img {
+    display: none;
+}
+
+tr:hover td a.favorite_table_anchor span {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('b_favorite_white.png');?>) no-repeat 50% 50%;
+}
+
+table.data thead a:hover,
+table.ajax thead a:hover,
+table#sticky_columns thead a:hover {
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
+}
+
+.sort_arrow {    
+    margin-top: -3px !important;    
+}
+
+#sticky_columns {
+    background: <?php echo $GLOBALS['cfg']['PageBackground']; ?> !important;
+    margin-left: 19px !important;
+    top: 105px !important;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+}
+
+form#usersForm button.mult_submit,
+form.ajax button.mult_submit {
+    margin-top: -3px;
+    cursor: pointer;
+    color: <?php echo $GLOBALS['cfg']['ThColor']; ?> !important;
+}
+form#usersForm button.mult_submit:hover,
+form.ajax button.mult_submit:hover {    
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
+}
+
+#fieldset_user_global_rights fieldset div.item {
+    margin: 1em 0;
+}
+
+#fieldset_user_global_rights fieldset div.item input[type=number] {
+    width: 60px;
+    float: right;
+    margin-top: -4px;
+}
+
+#fieldset_user_priv {
+    margin-bottom: 0.5em;
+}
+
+#fieldset_user_priv div.item,
+#fieldset_user_priv div.item i {
+    margin-right: 20px;
+}
+
+#fieldset_mode {
+    line-height: 2em;
+    margin: -1.5em 0;
+}
+
+#fieldset_add_user_login {
+    margin: -1em 0;
+}
+
+#fieldset_add_user_login div.item {
+    line-height: 36px;
+}
+
+#add_user_dialog,
+#edit_user_dialog {
+    margin: 0 20px !important;
+}
+
+#li_switch_dbstats > strong {
+    font-weight: normal;
+}
+
+#fieldset_add_user_database {
+    padding: 0 1.5em 1em;
+    line-height: 2em;
+}
+
+#replication {
+    margin-bottom: 1em;
+}
+
+#fieldset_add_user_login pre {
+    margin: .5em 0;
+    color: <?php echo $GLOBALS['cfg']['SuccessText']; ?>;
+}
+
+#confslave_submit {
+    margin-top: -40px;
+}
+
+#binlogTable code.sql {
+    margin: -32px 0;
+}
+
+#boxContainer .operations_half_width {
+    width:28% !important;
+    margin: 0 2em 1em !important;
+    line-height: 2em;
+}
+
+#boxContainer .operations_full_width {
+    width: 100% !important;
+    overflow: hidden;
+}
+
+#boxContainer .operations_full_width .notice {
+    margin-top: 3em;
+}
+
+#boxContainer fieldset {
+    -moz-border-radius: 4px 4px 0 4px !important;
+    -webkit-border-radius: 4px 4px 0 4px !important;
+    border-radius: 4px 4px 0 4px !important;    
+}
+
+#boxContainer form fieldset.tblFooters {
+    float: none !important;
+    padding: 0;
+    margin: -15px 0 0;
+}
+
+#boxContainer form fieldset.tblFooters input {
+    float: none;
+    margin-right: 0;
+    -moz-border-radius: 0 0 4px 4px !important;
+    -webkit-border-radius: 0 0 4px 4px !important;
+    border-radius: 0 0 4px 4px !important;
+    padding: 3px 15px;
+}
+
+#boxContainer form fieldset .formelement input[type=text],
+#boxContainer form fieldset .formelement input[type=number] {
+    width: 30%;
+}
+
+#boxContainer form fieldset input[type=text],
+#boxContainer form fieldset input[type=number] {
+    width: 95%;
+}
+
+#boxContainer form fieldset select {
+    width: 98%;
+}
+
+#boxContainer form fieldset .formelement {
+    text-align: right;
+    width: 100%;
+}
+
+form#copy_db_form {
+    line-height: 2.3em;
+}
+
+form#copy_db_form .tblFooters {
+    margin-top: -18px !important;
+}
+
+#db_search_form.ajax table.formlayout td {
+    line-height: 2.5em;
+}
+
+#searchoptions fieldset {
+    border: 1px solid #2c2c2c;
+    background: rgba(0,0,0,0.2);    
+}
+
+#searchoptions #fieldset_select_fields {
+    margin-right: 2em;
+}
+
+#searchoptions #fieldset_select_fields #oDistinct {
+    margin-left: 1em;
+}
+
+#searchoptions #fieldset_display_order {
+    margin-bottom: 2em;
+}
+
+.importoptions .formelementrow {
+    margin-left: 40px;
+    line-height: 2em;
+}
+
+#tblchartform div label {
+    margin-right: .6em !important;
+}
+
+/* Fixing the Insert section */
+
+#insertForm table.insertRowTable {
+    margin-top: 1em;
+}
+
+#insertForm table.insertRowTable td {
+    background: #151515 !important;
+    line-height: 2.8em;
+}
+
+#insertForm table.insertRowTable tfoot input {
+    float:right;
+    margin-top: -12px;
+    margin-right: -12px;
+    border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    padding: 4px 14px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.7) inset;
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.7) inset;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.7) inset;
+    border: none;
+}
+
+#insertForm table.insertRowTable td textarea {
+    width:95%;
+    margin-left: 5px;
+    height: 5em !important;
+}
+
+#pma_favorite_list li.warp_link:hover {
+    color: inherit;
+}
+
+#table_columns td {
+    line-height: 3em;
+}
+
+#formQBE {
+    display:none;
+}
+
+form div.floatleft textarea {
+    width: 99.5%;
+    margin-bottom: 40px;
+}
+
+form div.floatleft .tblFooters,
+form div.floatleft {
+    float: none;
 }

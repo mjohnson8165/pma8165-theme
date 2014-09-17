@@ -158,10 +158,9 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
     float: <?php echo $left; ?>;
 }
 #pma_navigation_tree div.block i,
-#pma_navigation_tree div.block b {
-    width: 1.5em;
+#pma_navigation_tree div.block b {    
     height: 1.5em;
-    min-width: 16px;
+    min-width: 10px;
     min-height: 8px;
     position: absolute;
     bottom: 0.7em;
@@ -171,7 +170,7 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 #pma_navigation_tree div.block i { /* Top and right segments for the tree element connections */
     display: block;
     border-<?php echo $left; ?>: 1px solid #666;
-    border-bottom: 1px solid #666;
+    border-bottom: 1px solid #555;
 }
 #pma_navigation_tree div.block i.first { /* Removes top segment */
     border-<?php echo $left; ?>: 0;
@@ -192,9 +191,13 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 }
 #pma_navigation_tree div.block img {
     position: relative;
-    top: -0.6em;
+    top: -7px;
     <?php echo $left; ?>: 0;
     margin-<?php echo $left; ?>: -7px;
+}
+#pma_navigation_tree div.block img.ic_s_db,
+#pma_navigation_tree div.block img.ic_b_newdb {
+    top: -10px;    
 }
 #pma_navigation_tree div.throbber img {
     top: 2px;
@@ -212,6 +215,8 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
     border-<?php echo $left; ?>: 1px solid #666;
     margin-<?php echo $left; ?>: 0.75em;
     padding-<?php echo $left; ?>: 0.75em;
+    margin-top: -14px;
+    margin-bottom: -12px;
 }
 #pma_navigation_tree .last > .list_container {
     border-<?php echo $left; ?>: 0 solid #666;
@@ -242,7 +247,7 @@ li.fast_filter span {
     padding: 0.2em;
     cursor: pointer;
     font-weight: bold;
-    color: <?php echo $GLOBALS['cfg']['NaviWidth']; ?>;
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
 }
 /* IE10+ has its own reset X */
 html.ie li.fast_filter span {
@@ -298,4 +303,5 @@ li.fast_filter.db_fast_filter {
     -moz-box-shadow: 5px 8px 10px rgba(0,0,0,0.15);
     -webkit-box-shadow: 5px 8px 10px rgba(0,0,0,0.15);
     box-shadow: 5px 8px 10px rgba(0,0,0,0.15);
+    height: 92px;
 }

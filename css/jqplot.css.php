@@ -19,8 +19,8 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 /*rules for the plot target div.  These will be cascaded down to all plot elements according to css rules*/
 .jqplot-target {
     position: relative;
-    color: #222222;
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #eee;
+    font-family: <?php echo $GLOBALS['cfg']['FontFamily']; ?>;
     font-size: 1em;
 /*    height: 300px;
     width: 590px;*/    
@@ -151,8 +151,8 @@ table.jqplot-table-legend {
 }
 
 table.jqplot-table-legend, table.jqplot-cursor-legend {
-    background-color: rgba(255,255,255,0.6);
-    border: 1px solid #cccccc;
+    background-color: rgba(0,0,0,0.6);
+    border: 1px solid #333;
     position: absolute;
     font-size: 0.75em;    
 }
@@ -186,8 +186,8 @@ td.jqplot-seriesToggle:hover, td.jqplot-seriesToggle:active {
 }
 
 div.jqplot-table-legend-swatch-outline {
-    border: 1px solid #cccccc;
-    padding: 1px;
+    padding: 2px;
+    margin: 2px 0;
 }
 
 div.jqplot-table-legend-swatch {

@@ -7,10 +7,13 @@
  * @subpackage PMA8165
  */
 
-/**
- * Icon set used by this theme: http://famfamfam.com/lab/icons/silk/
- */
+////////////////////////
+// Thorough TODO list //
+////////////////////////
+
+// NOTE: Add rules for backwards compatibility with versions < v4.2
 
 $theme_name = 'pma8165';
-$theme_full_version = '1.0';
+$theme_full_version = '1.4';
+
 ?>

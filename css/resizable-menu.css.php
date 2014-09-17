@@ -33,25 +33,25 @@ ul.resizable-menu .shown {
 
 ul.resizable-menu ul {
     margin: 0;
-    padding: 0;
+    padding: 1px 0;
     position: absolute;
     list-style-type: none;
     display: none;
-    border: 1px #ddd solid;
+    border: 1px solid rgba(0,0,0,0.1);
     z-index: 2;
     <?php echo $right; ?>: 0;
-}
-
-ul.resizable-menu li:hover {
-    <?php echo $_SESSION['PMA_Theme']->getCssGradient('ffffff', 'e5e5e5'); ?>
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
 }
 
 ul.resizable-menu li:hover ul,
 ul.resizable-menu .submenuhover ul {
     display: block;
-    background: #fff;
+    background: rgba(20,20,20,0.9);
 }
 
 ul.resizable-menu ul li {
     width: 100%;
+    margin: 3px 0 3px 3px !important;
 }

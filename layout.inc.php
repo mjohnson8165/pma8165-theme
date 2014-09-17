@@ -2,8 +2,6 @@
 
 // FIXME: make links on alert boxes white and add dashed underline to them
 // TODO: figure a way to inject OpenSans font or fallback to sans serif
-// FIXME: set wrapper on the search form (in table view) to transparent
-// TODO: replace logo_right.png with something that looks like this century
 
 // NOTE: the query statistics chart needs to be altered differently than css
 
@@ -15,6 +13,7 @@
  * @package    PhpMyAdmin-theme
  * @subpackage PMA8165
  */
+
 
 /**
  * navi frame
@@ -38,6 +37,7 @@ $GLOBALS['cfg']['NaviPointerBackground']    = 'rgba(255,255,255,0.05)';
 $GLOBALS['cfg']['HeaderBackground']         = '#222';
 $GLOBALS['cfg']['SuccessText']              = '#d4fb6a';
 $GLOBALS['cfg']['ControlColor']             = '#d64937';
+$GLOBALS['cfg']['PageBackground']           = '#1a1a1a';
 
 
 /**
@@ -70,7 +70,7 @@ $GLOBALS['cfg']['BrowseMarkerBackground']   = '#fc9';
  * if not set the browser default will be used
  * (depending on browser, DTD and system settings)
  */
-$GLOBALS['cfg']['FontFamily']           = '"open sans", sans-serif';
+$GLOBALS['cfg']['FontFamily']           = '"Open Sans", sans-serif';
 /**
  * fixed width font family, used in textarea
  */
