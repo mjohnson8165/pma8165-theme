@@ -1,7 +1,5 @@
-PMA8165
-======
-A clean, dark and minimal theme for phpMyAdmin 4.2.x
------------------------------------------------------------
+# PMA8165
+## A clean, dark and minimal theme for phpMyAdmin 4.2.x
 
 ---
 This theme was born simply out of my deepest needs - more precisely the need to not have to stare at the ugly default phpMyAdmin theme all day long (sorry, *guy* who made it). But seriously now, it had to come to this - in a multiple screen setup where Gnome looks awesome, terminal windows look awesome and Sublime Text tops everything, phpMyAdmin just didn't belong.
@@ -24,9 +22,9 @@ I guess one could say PMA8165 was somewhat inspired from the [Numix GTK3 theme](
 
 And here are a couple of screenshots of what you'll be getting:
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "PMA8165 Theme - Screenshot #1")
+![alt text](https://github.com/mjohnson8165/pma8165-theme/blob/master/screenshot-1.png "PMA8165 Theme - Screenshot #1")
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "PMA8165 Theme - Screenshot #1")
+![alt text](https://github.com/mjohnson8165/pma8165-theme/blob/master/screenshot-2.png "PMA8165 Theme - Screenshot #2")
 
 ## Disclaimer
 
