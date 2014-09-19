@@ -1671,9 +1671,7 @@ div#queryboxcontainer div#bookmarkoptions {
 
 /* main page */
 #maincontainer {
-    /* background-image: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('logo_right.png');?>); */
-    /* background-position: <?php echo $right; ?> bottom; */
-    /* background-repeat: no-repeat; */
+    overflow: hidden;
 }
 
 #mysqlmaininformation,
