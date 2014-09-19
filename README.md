@@ -1,11 +1,7 @@
-# PMA8165
-## A clean, dark and minimal theme for phpMyAdmin 4.2.x
+## A clean, dark and minimal theme for phpMyAdmin
 
 ---
 This theme was born simply out of my deepest needs - more precisely the need to not have to stare at the ugly default phpMyAdmin theme all day long (sorry, *guy* who made it). But seriously now, it had to come to this - in a multiple screen setup where Gnome looks awesome, terminal windows look awesome and Sublime Text tops everything, phpMyAdmin just didn't belong.
-
-> ## There are many great things about the '90s. 
-## Your phpMyAdmin theme is **not** one of them.
 
 I guess one could say PMA8165 was somewhat inspired from the [Numix GTK3 theme](http://satya164.deviantart.com/art/Numix-GTK3-theme-360223962) which, in combination with a few more things, can make Gnome look lethal as detailed in one of my fascinating blog posts on [How To: Make Linux Look Sexy In Only 3 Fast Steps](http://howto8165.wordpress.com/2014/08/15/linux-minimalist-desktop/).
 
@@ -36,4 +32,4 @@ But then again, only time will tell whether I'll work on the other branch anytim
 
 ## Caution
 
-The **img** directory is a mess - most icons in there are not even used and the sprites file was tampered manually, so attempting to run the *generate-sprites* script is entirely unadvisable at the moment, unless you really know what you're doing - I know what I'm doing, I just don't wanna do it *yet*...
+The *img* directory is a mess - most icons in there are not even used and the sprites file was tampered manually, so attempting to run the *generate-sprites* script is entirely unadvisable at the moment, unless you really know what you're doing - I know what I'm doing, I just don't wanna do it *yet*...
