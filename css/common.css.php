@@ -240,7 +240,7 @@ input[type=date] {
     -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 
-    background: rgba(0,0,0,0.2);
+    background: <?php echo $GLOBALS['cfg']['NaviBackground']; ?>;
     border: 1px solid rgba(255,255,255,0.1);
     color: #ccc;
     padding: 4px;
@@ -382,7 +382,7 @@ select {
     border: 1px solid rgba(255,255,255,0.1);
     color: #ccc;
     padding: 3px;
-    background: rgba(0,0,0,0.2);
+    background: <?php echo $GLOBALS['cfg']['NaviBackground']; ?>;
 }
 
 select[multiple] {
@@ -1841,6 +1841,10 @@ div.sqlvalidate {
     padding-bottom: 1em;    
 }
 
+div.group select[name=lang] {
+    margin-left: 20px;
+}
+
 .group h2, .ui-dialog-titlebar {
     background: #252525 !important;
     padding: .5em .5em;
@@ -3021,7 +3025,7 @@ div.group ul li a * {
 div.group ul li select {
     width: 200px;
     text-align: center;
-    margin-left: 12px
+    margin-left: 16px
 }
 
 li#li_user_preferences a,
@@ -3523,4 +3527,8 @@ form div.floatleft textarea {
 form div.floatleft .tblFooters,
 form div.floatleft {
     float: none;
+}
+
+a.hideNavItem.ajax {
+    display: none
 }
