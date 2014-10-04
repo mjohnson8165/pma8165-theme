@@ -1,4 +1,6 @@
-## A clean, dark and minimal theme for phpMyAdmin
+## A dark minimal theme for phpMyAdmin 4.2.x.x
+
+_**Update**: 2014-10-04 now compatible with latest pma stable release: 4.2.9.1_
 
 ---
 This theme was born simply out of my deepest needs - more precisely the need to not have to stare at the ugly default phpMyAdmin theme all day long (sorry, *guy* who made it). But seriously now, it had to come to this - in a multiple screen setup where Gnome looks awesome, terminal windows look awesome and Sublime Text tops everything, phpMyAdmin just didn't belong.
