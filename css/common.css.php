@@ -751,9 +751,21 @@ div.error h1 {
 }
 
 fieldset.confirmation {
+    background: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;
+    color: #fff;
 }
 
 fieldset.confirmation legend {
+    display:none
+}
+
+#page_content fieldset.tblFooters form {
+    display: block;
+    float: right;
+}
+
+#page_content fieldset.tblFooters form input {
+    float: none;
 }
 
 /* end messageboxes */
@@ -934,6 +946,7 @@ ul#topmenu2 li {
 #topmenu2 img {
     margin-right: .5em;
     vertical-align: -3px;
+    display: none;
 }
 
 .menucontainer {
@@ -2244,6 +2257,10 @@ table#index_columns select {
     margin: 0 .5em;
 }
 
+.margin#change_column_dialog fieldset.tblFooters input {
+    float: none;
+}
+
 /* config forms */
 .config-form ul.tabs {
     margin: 1.1em .2em 0;
@@ -2844,17 +2861,22 @@ fieldset .disabled-field td {
 }
 
 .cEdit input[type=text] {
-    background: #FFF;
+    background: none;
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
 .cEdit .edit_area {
-    background: #FFF;
-    border: 1px solid #999;
+    background: #111;
+    border: none;
     min-width: 10em;
     padding: .3em .5em;
+}
+
+.cEdit .edit_area textarea {
+    border: none;
+    background: none;
 }
 
 .cEdit .edit_area select,
@@ -2874,12 +2896,12 @@ fieldset .disabled-field td {
 }
 
 .cEdit .edit_box_posting {
-    background: #FFF url(<?php echo $_SESSION['PMA_Theme']->getImgPath('ajax_clock_small.gif');?>) no-repeat right center;
+    background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('ajax_clock_small.gif');?>) no-repeat right center;
     padding-<?php echo $right; ?>: 1.5em;
 }
 
 .cEdit .edit_area_loading {
-    background: #FFF url(<?php echo $_SESSION['PMA_Theme']->getImgPath('ajax_clock_small.gif');?>) no-repeat center;
+    background: #111 url(<?php echo $_SESSION['PMA_Theme']->getImgPath('ajax_clock_small.gif');?>) no-repeat center;
     height: 10em;
 }
 
@@ -2892,6 +2914,31 @@ fieldset .disabled-field td {
     background: #EEE;
     color: #555;
     padding: .2em .3em;
+}
+
+
+.edit_box {
+    border: none;
+    background: #111;
+    box-shadow: inset 0 1px 10px rgba(0,0,0,0.3);
+    color: <?php echo $GLOBALS['cfg']['ControlColor']; ?>;    
+    padding-left: 7px !important;
+    text-align:center;
+}
+
+.cEdit img.ui-datepicker-trigger {
+    background: #111;
+    padding: 12px;
+    margin-top: -2px;
+}
+
+.ui-datepicker-calendar tr:hover td {
+    background: none !important
+}
+
+.ui-datepicker-calendar tr td:hover a {
+    background: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
+    border-color: #ff533d;
 }
 
 .saving_edited_data {
@@ -2918,6 +2965,12 @@ fieldset .disabled-field td {
 .ui-dialog-content .ui-datepicker-trigger {
     margin-top: 4px;
     margin-left: 8px;
+}
+
+td[data-type=date] img {
+    vertical-align: middle;
+    margin-bottom: 6px;
+    margin-right: 6px;
 }
 
 input.btn {
@@ -3196,7 +3249,7 @@ input[type="radio"] {
 }
 
 #actions_panel {
-    padding: 1em 0 0;
+    padding: 1em 0 0 1em;
     margin: 0 0 1em;    
 }
 
@@ -3283,6 +3336,12 @@ table.data tr th.right {
 /* Fix favorites icon on hover */
 tr:hover td a.favorite_table_anchor img {
     display: none;
+
+}
+
+tr td a.favorite_table_anchor {
+    display: block;
+    line-height: 0;
 }
 
 tr:hover td a.favorite_table_anchor span {
@@ -3407,7 +3466,7 @@ form.ajax button.mult_submit:hover {
 #boxContainer form fieldset.tblFooters {
     float: none !important;
     padding: 0;
-    margin: -15px 0 0;
+    margin: -13px 0 0;
 }
 
 #boxContainer form fieldset.tblFooters input {
@@ -3490,7 +3549,7 @@ form#copy_db_form .tblFooters {
 #insertForm table.insertRowTable tfoot input {
     float:right;
     margin-top: -12px;
-    margin-right: -12px;
+    margin-right: -2px;
     border-radius: 0 0 5px 5px;
     -webkit-border-radius: 0 0 5px 5px;
     -moz-border-radius: 0 0 5px 5px;
