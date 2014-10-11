@@ -745,6 +745,15 @@ div.error h1 {
     display:none;
 }
 
+div.error a {
+    color: #fff;
+    border-bottom: 1px dotted #fff;
+}
+
+div.error a:hover {
+    border: none;
+}
+
 .confirmation {
     color: #000;
     background-color: pink;
