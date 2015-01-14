@@ -3600,3 +3600,6 @@ form div.floatleft {
 a.hideNavItem.ajax {
     display: none
 }
+
+#pma_navigation_tree>ul,
+#pma_console_container {display: none}
