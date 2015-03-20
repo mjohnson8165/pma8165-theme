@@ -5,7 +5,10 @@
 * Copyright 2014 jQuery Foundation and other contributors; Licensed MIT */
 
 /* Import Open Sans font */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@font-face {
+    font-family: 'Open Sans';
+    src: url(../css/OpenSans.ttf);
+}
 
 
 /* Force SQL Query window custom styling */

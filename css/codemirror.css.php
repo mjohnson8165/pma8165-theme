@@ -18,6 +18,7 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 
 .CodeMirror-lines {
   padding: 4px 0; /* Vertical padding around content */
+  line-height: 20px
 }
 .CodeMirror pre {
   padding: 0 4px; /* Horizontal padding of content */
@@ -117,10 +118,12 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
   overflow: hidden;
   background: none;
   color: #eee;
-  font-family: consolas, monospace;
+  font-family: <?php echo $GLOBALS['cfg']['FontFamilyFixed']; ?> !important;
   height: <?php echo ceil($GLOBALS['cfg']['TextareaRows'] * 1.2); ?>em;
   margin-bottom: 1.2em;  
 }
+
+.CodeMirror * {font-family: <?php echo $GLOBALS['cfg']['FontFamilyFixed']; ?> !important;}
 
 #inline_editor_outer .CodeMirror {
     height: <?php echo ceil($GLOBALS['cfg']['TextareaRows'] * 0.4); ?>em;

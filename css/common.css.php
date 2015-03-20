@@ -21,8 +21,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     margin: 0; 
     padding: 0; 
     border: 0; 
-    font-family: 'Open Sans';
+    font-family: <?php echo $GLOBALS['cfg']['FontFamily']; ?>;
 }
+
+
+body {margin-bottom: 0 !important}
 
 *:focus /* disable Chrome's and Safari's idiot input outline effect */
 {
@@ -882,6 +885,9 @@ td.disabled {
     white-space: nowrap;
 }
 
+.nowrap .icon,
+#tablefieldinsertbuttoncontainer {display: none !important}
+
 /**
  * login form
  */
@@ -974,6 +980,7 @@ ul#topmenu {margin-left: 20px}
 /* default tab styles */
 .tabactive {
     background: <?php echo $GLOBALS['cfg']['ControlColor']; ?> !important;
+    color: #fff !important;
 }
 
 ul#topmenu2 a {
@@ -1668,7 +1675,7 @@ div#tablefieldscontainer {
 div#tablefieldscontainer select {
     width: 100%;
     background: rgba(0,0,0,0.2);
-    /* height: 12em; */
+    height: 12em;
 }
 
 textarea#sqlquery {
@@ -3025,13 +3032,40 @@ body .ui-widget {
 /* Display SOME icons */
 .icon.ic_s_top,
 .icon.ic_s_db,
+.icon.ic_b_views,
+.icon.ic_b_group,
+.icon.ic_b_browse[title=Tables],
 .icon.ic_b_newdb,
 .icon.ic_b_plus,
 .icon.ic_b_minus,
 .menucontainer .icon,
-#navipanellinks .icon,
+#topmenu .icon,
 .error .icon {
     display:inline-block;
+}
+
+.icon.ic_b_group {
+margin-top: -12px !important;
+margin-left: -5px !important;
+background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('b_newdb.png');?>) no-repeat 50% 50% !important
+}
+
+.icon.ic_b_props[title=View] {
+display:inline-block;
+margin-top: -8px !important;
+margin-left: -4px !important;
+background: url(<?php echo $_SESSION['PMA_Theme']->getImgPath('col_pointer_ver.png');?>) no-repeat 50% 50% !important
+}
+
+li.navGroup i div.block a img {
+margin-top: -12px !important;
+margin-left: -5px !important;    
+}
+
+.icon.ic_b_views,
+.icon.ic_b_browse {
+margin-top: -16px !important;
+margin-left: -5px !important;    
 }
 
 #sqlqueryresults.ajax fieldset a,
@@ -3180,7 +3214,8 @@ div.group.pmagroup li a {
 }
 
 #pma_navigation_tree li.new_table a.hover_show_full,
-#pma_navigation_tree li.new_database a.hover_show_full {
+#pma_navigation_tree li.new_database a.hover_show_full,
+#pma_navigation_tree li.new_view a.hover_show_full {
     line-height: 29px;
     color: #555;
     font-size: 0.9em;
