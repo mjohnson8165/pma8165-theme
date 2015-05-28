@@ -11,6 +11,7 @@
 if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
     exit();
 }
+$navLineColor = '#222';
 ?>
 
 /******************************************************************************/
@@ -169,8 +170,8 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
 }
 #pma_navigation_tree div.block i { /* Top and right segments for the tree element connections */
     display: block;
-    border-<?php echo $left; ?>: 1px solid #666;
-    border-bottom: 1px solid #555;
+    border-<?php echo $left; ?>: 1px solid <?php echo $navLineColor; ?>;
+    border-bottom: 1px solid <?php echo $navLineColor; ?>;
 }
 #pma_navigation_tree div.block i.first { /* Removes top segment */
     border-<?php echo $left; ?>: 0;
@@ -180,7 +181,7 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
     height: 0.75em;
     bottom: 0;
     <?php echo $left; ?>: 0.75em;
-    border-<?php echo $left; ?>: 1px solid #666;
+    border-<?php echo $left; ?>: 1px solid <?php echo $navLineColor; ?>;
 }
 #pma_navigation_tree div.block a,
 #pma_navigation_tree div.block u {
@@ -212,14 +213,14 @@ if (! defined('PMA_MINIMUM_COMMON') && ! defined('TESTSUITE')) {
     padding-<?php echo $left; ?>: 0.3em;
 }
 #pma_navigation_tree .list_container {
-    border-<?php echo $left; ?>: 1px solid #666;
+    border-<?php echo $left; ?>: 1px solid <?php echo $navLineColor; ?>;
     margin-<?php echo $left; ?>: 0.75em;
     padding-<?php echo $left; ?>: 0.75em;
     margin-top: -14px;
     margin-bottom: -12px;
 }
 #pma_navigation_tree .last > .list_container {
-    border-<?php echo $left; ?>: 0 solid #666;
+    border-<?php echo $left; ?>: 0 solid <?php echo $navLineColor; ?>;
 }
 
 /* Fast filter */
@@ -227,7 +228,7 @@ li.fast_filter {
     padding-<?php echo $left; ?>: 0.75em;
     margin-<?php echo $left; ?>: 0.75em;
     padding-<?php echo $right; ?>: 35px;
-    border-<?php echo $left; ?>: 1px solid #666;
+    border-<?php echo $left; ?>: 1px solid <?php echo $navLineColor; ?>;
 }
 li.fast_filter input {
     padding-<?php echo $right; ?>: 1.7em;
