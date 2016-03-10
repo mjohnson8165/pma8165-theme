@@ -3027,7 +3027,7 @@ body .ui-widget {
 }
 
 /* Hide ALL icons */
-.icon {display:none}
+.icon {display:none;}
 
 /* Display SOME icons */
 .icon.ic_s_top,
@@ -3040,7 +3040,7 @@ body .ui-widget {
 .icon.ic_b_minus,
 .menucontainer .icon,
 #topmenu .icon,
-.error .icon {
+.error, .icon {
     display:inline-block;
 }
 
